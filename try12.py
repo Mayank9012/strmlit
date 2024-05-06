@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("""Streamlit demo""")
+st.markdown(<h1 style='text align: center;'>Streamlit demo</h1>)
 st.write("Details")
 Gender = ['Male','Female','Others']
 
