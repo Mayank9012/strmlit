@@ -12,6 +12,7 @@ def main():
     submit = st.form_submit_button("Submit")
 
   if submit:
+    st.write("Group : ")
     if Age<18:
       st.write("K")
     elif Age>=18 and Age<=30:
