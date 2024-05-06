@@ -21,6 +21,9 @@ def main():
       st.write("A")
     else:
       st.write("O")
+
+  html = "<a href="#">Link</a>"
+  s
       
 if __name__ == '__main__':
    main()
