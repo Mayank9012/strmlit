@@ -14,7 +14,7 @@ def main():
   if submit:
     if Age<18:
       print("K")
-    elif Age>=18 and Age=<30:
+    elif Age>=18 and Age<=30:
       print("A")
     else:
       print("O")
