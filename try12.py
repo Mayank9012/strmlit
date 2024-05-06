@@ -13,11 +13,11 @@ def main():
 
   if submit:
     if Age<18:
-      print("K")
+      st.write("K")
     elif Age>=18 and Age<=30:
-      print("A")
+      st.write("A")
     else:
-      print("O")
+      st.write("O")
       
 if __name__ == '__main__':
    main()
