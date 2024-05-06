@@ -6,9 +6,7 @@ option = ['A','B','C','D','']
 
 def main():
   with st.form("Enter details:"):
-    name = st.text_input("Enter Name: ",label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled,
-        placeholder=st.session_state.placeholder,)
+    name = st.text_input("Enter Name: ",)
     st.selectbox("Option:", options=option)
     Age = st.slider("Age",1,99,value=0,format="%d")
     submit = st.form_submit_button("Submit")
