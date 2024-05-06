@@ -1,8 +1,12 @@
 import streamlit as st
-import mymodel as m
 
 st.write("""
 # Streamlit demo
 first
 """)
-st.write(m.run(window=15))
+option = ['A','B','C','D','']
+
+def main():
+  with st.form("Enter details:)
+  st.selectbox("Option:", options=option)
+  st.slider("Age",10,99,value=0,format="%d")
