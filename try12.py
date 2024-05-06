@@ -22,7 +22,7 @@ def main():
     else:
       st.write("O")
 
-  html1 = "<a href=\"\#\">Link</a>"
+  html1 = "<a href=\"https://raw.githubusercontent.com/Mayank9012/strmlit/main/image-300x181.png\">Link</a>"
   st.html(html1)
       
 if __name__ == '__main__':
