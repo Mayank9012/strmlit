@@ -6,12 +6,13 @@ option = ['A','B','C','D','']
 
 def main():
   with st.form("Enter details:"):
-    st.text_input("Enter Name: ")
+    name = st.text_input("Enter Name: ")
     st.selectbox("Option:", options=option)
     Age = st.slider("Age",1,99,value=0,format="%d")
     submit = st.form_submit_button("Submit")
 
   if submit:
+    st.write("Name : ",name)
     st.write("Group : ")
     if Age<18:
       st.write("K")
