@@ -22,8 +22,8 @@ def main():
     else:
       st.write("O")
 
-  html = "<a href=\"\#\">Link</a>"
-  st.markdown(html,unfollow_allow_html=True)
+  html1 = "<a href=\"\#\">Link</a>"
+  st.html(html1)
       
 if __name__ == '__main__':
    main()
