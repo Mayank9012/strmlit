@@ -1,9 +1,7 @@
 import streamlit as st
 
-st.write("""
-# Streamlit demo
-first
-""")
+st.title("""Streamlit demo""")
+st.write("Details")
 option = ['A','B','C','D','']
 
 def main():
