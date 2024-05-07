@@ -44,7 +44,7 @@ initializeDarkMode();
 with st.sidebar:
        mode = st.selectbox(
        "Choose Mode",
-       ("Dark", "Light"),placeholder="Select")
+       ("Dark", "Light"),placeholder="Select",)
        if dark:
               st.markdown(dark,unsafe_allow_html=True)
        if light:
