@@ -50,13 +50,12 @@ def main():
        with tab1:
               st.write("Name : ",name)
               st.write("Gender : ",gen)
-              st.write("Group : ")
               if Age<18:
-                     st.write("K")
+                     st.write("Group : K")
               elif Age>=18 and Age<=30:
-                     st.write("A")
+                     st.write("Group : A")
               else:
-                     st.write("O")
+                     st.write("Group : O")
 
        with tab2:
               data = {
