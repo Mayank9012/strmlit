@@ -23,32 +23,13 @@ body {
 </style>
 """
 
-dark_light= """
-<script>
-function toggleDarkLightMode() {
-    var body = document.body;
-    body.classList.toggle("dark-mode");
-}
-
-function initializeDarkMode() {
-    var prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    if (prefersDarkScheme.matches) {
-        toggleDarkLightMode();
-    }
-}
-
-initializeDarkMode();
-</script>
-"""
-
-with st.sidebar:
-       mode = st.selectbox(
+mode = st.sidebar.selectbox(
        "Choose Mode",
        ("Dark", "Light"),index=None,placeholder="Select",)
-       if dark:
-              st.markdown(dark,unsafe_allow_html=True)
-       if light:
-              st.markdown(light,unsafe_allow_html=True)
+if mode == "Dark":
+       st.markdown(dark,unsafe_allow_html=True)
+if mode == "Light":
+       st.markdown(light,unsafe_allow_html=True)
 
 
 st.markdown("<h1 style='text-align: center;'> Streamlit Prac </h1>",unsafe_allow_html=True)
