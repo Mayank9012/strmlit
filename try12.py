@@ -26,7 +26,7 @@ with st.sidebar:
        mode = st.radio("Choose Mode:",("Light","Dark"))
 if mode == "Light":
        st.markdown(light,unsafe_allow_html=True)
-elif mode == "Dark":
+else:
        st.markdown(dark,unsafe_allow_html=True)
 
 
