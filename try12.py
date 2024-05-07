@@ -37,7 +37,7 @@ st.write("Details")
 Gender = ['Male','Female','Others']
 
 def main():
-
+              
                
   with st.form("Enter details:"):
     name = st.text_input("Enter Name: ",)
@@ -46,15 +46,34 @@ def main():
     submit = st.form_submit_button("Submit")
 
   if submit:
-    st.write("Name : ",name)
-    st.write("Gender : ",gen)
-    st.write("Group : ")
-    if Age<18:
-      st.write("K")
-    elif Age>=18 and Age<=30:
-      st.write("A")
-    else:
-      st.write("O")
+       tab1,tab2 = st.tabs(["Text","Table"])
+       with tab1:
+              st.write("Name : ",name)
+              st.write("Gender : ",gen)
+              st.write("Group : ")
+              if Age<18:
+                     st.write("K")
+              elif Age>=18 and Age<=30:
+                     st.write("A")
+              else:
+                     st.write("O")
+
+       with tab2:
+              data = {
+              "Attribute": ["Name", "Gender", "Group"],
+              "Value": [name, gen, ""]
+              }
+
+              if Age < 18:
+                  group = "K"
+              elif 18 <= Age <= 30:
+                  group = "A"
+              else:
+                  group = "O"
+
+              data["Value"].append(group)
+
+              st.table(data)
 
  
       
