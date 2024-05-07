@@ -35,7 +35,7 @@ def main():
   if mode == "Light":
     st.markdown(light,unsafe_allow_html=True)
   if mode == "Dark":
-    st.markdown(dark,unsafe_allow_html=True
+    st.markdown(dark,unsafe_allow_html=True)
                
   with st.form("Enter details:"):
     name = st.text_input("Enter Name: ",)
