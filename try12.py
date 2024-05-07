@@ -9,8 +9,8 @@ st.markdown(css, unsafe_allow_html=True)
 dark = """
 <style>
 body {
-    background-color: #1e1e1e; /* Dark gray */
-    color: #ffffff; /* White text */
+    background-color: #1e1e1e !important; /* Dark gray */
+    color: #ffffff !important; /* White text */
 }
 </style>
 """
@@ -18,8 +18,8 @@ body {
 light = """
 <style>
 body {
-    background-color: #f0f0f0; /* Light gray */
-    color: #000000; /* Black text */
+    background-color: #f0f0f0 !important; /* Light gray */
+    color: #000000 !important; /* Black text */
 }
 </style>
 """
