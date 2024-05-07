@@ -31,7 +31,7 @@ Gender = ['Male','Female','Others']
 
 def main():
   with st.sidebar:
-    mode = st.radio("Choose Mode:","Light","Dark")
+    mode = st.radio("Choose Mode:",("Light","Dark"))
   if mode == "Light":
     st.markdown(light,unsafe_allow_html=True)
   if mode == "Dark":
