@@ -42,9 +42,9 @@ initializeDarkMode();
 """
 
 with st.sidebar:
-       mode = st.popover("Filter items")
-       dark = mode.checkbox("Dark", True)
-       light = mode.checkbox("Light", True)
+       mode = st.selectbox(
+       "Choose Mode",
+       ("Dark", "Light"),)
        if dark:
               st.markdown(dark_light,unsafe_allow_html=True)
        if light:
