@@ -42,10 +42,12 @@ initializeDarkMode();
 """
 
 with st.sidebar:
-       mode = st.checkbox("Choose Mode:",("Light","Dark"))
-       if mode == "Dark":
+       mode = st.popover("Filter items")
+       dark = mode.checkbox("Dark", True)
+       light = mode.checkbox("Light", True)
+       if dark:
               st.markdown(dark_light,unsafe_allow_html=True)
-       else:
+       if light:
               st.markdown(light,unsafe_allow_html=True)
 
 
