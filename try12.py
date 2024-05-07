@@ -42,7 +42,7 @@ initializeDarkMode();
 """
 
 with st.sidebar:
-       mode = st.radio("Choose Mode:",("Light","Dark"))
+       mode = st.checkbox("Choose Mode:",("Light","Dark"))
        if mode == "Dark":
               st.markdown(dark_light,unsafe_allow_html=True)
        else:
