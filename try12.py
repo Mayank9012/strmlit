@@ -61,7 +61,7 @@ def main():
        with tab2:
               data = {
               "Attribute": ["Name", "Gender", "Group"],
-              "Value": [name, gen, ""]
+              "Value": [name, gen]
               }
 
               if Age < 18:
