@@ -172,7 +172,7 @@ navbar1 = """
     <style>
     body {
         font-family: Arial, sans-serif;
-        margin: 10px;
+        margin: 0px;
 	padding 0px;
  
     }
@@ -191,26 +191,29 @@ navbar1 = """
     }
 
     .nav-list {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: white !important; /* Added !important */
     }
 
     .nav-item {
-        float: left;
+      float: left;
+      margin-right: 20px;
+      color: white !important; /* Added !important */
     }
 
     .nav-link {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+      display: block;
+      text-align: center;
+      text-decoration: none;
     }
 
     .nav-link:hover {
-        background-color: #57998b;
+      background-color: #57998b;
+      border-radius: 5px;
+      color:white;
     }
 
     .dropdown {
