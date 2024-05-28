@@ -341,8 +341,8 @@ def main():
             }
             .stStepCircle {
                 background-color:#299776;
-                width: 20px;
-                height: 20px;
+                width: 30px;
+                height: 30px;
                 border-radius: 50%;
                 border: 4px solid #fff; /* Add white border */
                 display:flex;
