@@ -183,7 +183,7 @@ def render_navbar():
             justify-content: space-between;
             align-items: right;
             padding: 10px 20px;
-            top : -45px;
+            top : -40px;
             position: relative;
             width: 100%; /* Adjusted width */
             z-index: 1000;
