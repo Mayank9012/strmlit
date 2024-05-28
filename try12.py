@@ -359,7 +359,7 @@ def main():
                 height: 20px;
                 border-radius: 50%;
                 display:flex;
-                margin-bottom:74px;
+                margin-bottom:76px;
                 transform: translateX(260%) translatey(-3115%);
                 justify-content: left;
                 align-items: left;
