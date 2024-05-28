@@ -171,16 +171,15 @@ def pop():
 navbar1 = """
     <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0px;
-	padding 0px;
- 
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
     .navigation {
       background-color: #b6e9d9;
       overflow: hidden;
-      display: flex;
-      justify-content: space-between;
+      display: inline;
+      justify-content: flex-start;
       align-items: right;
       padding: 10px 20px;
       top : -40px;
