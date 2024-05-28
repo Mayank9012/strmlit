@@ -159,6 +159,7 @@ def logo():
     st.markdown(logocode,unsafe_allow_html=True)
              
 logo()
+
 @st.experimental_dialog("Confirmation")
 def pop():
     st.success("Your query is submitted successfully")
@@ -351,7 +352,7 @@ def render_navbar():
     st.markdown(navbar, unsafe_allow_html=True)
 
 # Main function
-def main():time.sleep(5)
+def main():
     render_navbar()
     st.markdown("""
     <style>
@@ -362,6 +363,7 @@ def main():time.sleep(5)
     """, unsafe_allow_html=True)
     # Sidebar content
     with st.sidebar:
+	    time.sleep(5)
  
 		# Define CSS styles for the progress bars
         st.markdown(
