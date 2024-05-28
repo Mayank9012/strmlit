@@ -180,7 +180,7 @@ def render_navbar():
             background-color: #b6e9d9;
             overflow: hidden;
             display: inline;
-            justify-content: space-between;
+            justify-content: left;
             align-items: right;
             padding: 10px 20px;
             top : -40px;
@@ -216,6 +216,8 @@ def render_navbar():
             border-radius: 5px;
             color:white;
         }
+	a{
+ 		color:white;}
     </style>
     
     <nav class="navigation">
