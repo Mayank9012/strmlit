@@ -354,6 +354,21 @@ def main():
                 font-weight: bold;}
 			""",
 			unsafe_allow_html=True,)
+	        .stStepCircle1 {
+                background-color:none;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 4px solid #fff; /* Add white border */
+                display:flex;
+                margin-bottom:74px;
+                transform: translateX(250%) translatey(-300%);
+                justify-content: left;
+                align-items: left;
+                color: white;
+                font-weight: bold;}
+			""",
+			unsafe_allow_html=True,)
         steps = ["Submit_query", "OGRI", "16S_Tree", "WGS_Tree","Summary"]
         progress = st.progress(0)
         # Display progress bar with step circles
@@ -364,7 +379,6 @@ def main():
                     st.write("")
                 else:
                     st.write(f"")
-	        with st.container():
             for i, step in enumerate(steps):
                 st.markdown(f'<div class="stStepCircle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{step}</div>', unsafe_allow_html=True)
                 if i < len(steps) - 1:
