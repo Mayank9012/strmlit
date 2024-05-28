@@ -184,7 +184,7 @@ def render_navbar():
             align-items: right;
             padding: 10px 20px;
             top : -40px;
-            position: relative;
+            position: fixed;
             width: 100%; /* Adjusted width */
             z-index: 1000;
             color: white;
