@@ -166,7 +166,126 @@ def pop():
     st.link_button("Check Status","http://localhost:8502")
                 
 
+# Define the navigation bar HTML
+navbar1 = """
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+    }
+    .navigation {
+        background-color: #ad3838;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        margin: 0 auto; /* Center the navigation bar horizontally */
+        position: relative; /* Fixed position at the top of the viewport */
+        top: 38px; /* Distance from the top of the viewport */
+        left: 50%; /* Center the navigation bar horizontally */
+        transform: translateX(-50%); /* Center the navigation bar horizontally */
+        z-index:1000;
+    }
 
+    .nav-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .nav-item {
+        float: left;
+    }
+
+    .nav-link {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .nav-link:hover {
+        background-color: #57998b;
+    }
+
+    .dropdown {
+        position: relative;
+        display: flexbox;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: fixed;
+        top: 40px; /* adjust the top position */
+        left: 50%; /* adjust the left position */
+        transform: translateX(-50%); /* center the dropdown horizontally */
+        background-color: #f9f9f9;
+        width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(15, 14, 14, 0.2);
+        z-index: 1;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .dropdown-item {
+        color: rgb(241, 231, 231);
+        text-align: left;
+        padding: 8px 12px; /* Adjust padding */
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-item:hover {
+        background-color:#57998b;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block; 
+    }
+
+    .dropdown .dropbtn {
+        outline: none;
+    }
+
+    .dropdown-content.active {
+        display: contents;
+    }
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const dropdownBtn = document.querySelector('.dropdown .dropbtn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        dropdownBtn.addEventListener('click', () => {
+            dropdownContent.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.dropdown')) {
+                dropdownContent.classList.remove('active');
+            }
+        });
+    });
+    </script>
+
+
+    <nav class="navigation">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item dropdown">
+        <a href="javascript:void(0)" class="nav-link dropbtn">Help</a>
+        <div class="dropdown-content">
+            <a href="#" class="dropdown-item">User Guide</a>
+            <a href="#" class="dropdown-item">FAQ</a>
+            <a href="#" class="dropdown-item">Contact</a>
+        </div>
+        </li>
+    </ul>
+    </nav>
+"""
 def render_navbar():
   navbar = """
   <style>
@@ -231,7 +350,7 @@ def render_navbar():
 
 # Main function
 def main():
-    render_navbar()
+    st.markdown(navbar1,unsafe_allow_html=True)
     st.markdown("""
     <style>
         [data-testid=stSidebar] {
