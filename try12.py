@@ -158,7 +158,7 @@ def logo():
         """
     st.markdown(logocode,unsafe_allow_html=True)
              
-
+logo()
 @st.experimental_dialog("Confirmation")
 def pop():
     st.success("Your query is submitted successfully")
@@ -351,7 +351,7 @@ def render_navbar():
     st.markdown(navbar, unsafe_allow_html=True)
 
 # Main function
-def main():
+def main():time.sleep(5)
     render_navbar()
     st.markdown("""
     <style>
