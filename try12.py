@@ -259,7 +259,6 @@ navbar1 = """
     }
 
     </style>
-    <body>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const dropdownBtn = document.querySelector('.dropdown .dropbtn');
@@ -292,7 +291,6 @@ navbar1 = """
         </li>
     </ul>
     </nav>
-    </body>
 """
 def render_navbar():
   navbar = """
