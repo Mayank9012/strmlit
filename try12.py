@@ -360,7 +360,7 @@ def main():
                 border-radius: 50%;
                 display:flex;
                 margin-bottom:74px;
-                transform: translateX(250%) translatey(-3100%);
+                transform: translateX(250%) translatey(-3050%);
                 justify-content: left;
                 align-items: left;
                 color: white;
@@ -378,7 +378,7 @@ def main():
                 else:
                     st.write(f"")
             for i, step in enumerate(steps):
-                st.markdown(f'<div class="stStepCircle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{step}</div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="stStepCircle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{step}</div>', unsafe_allow_html=True)
                 if i < len(steps) - 1:
                     st.write("")
                 else:
