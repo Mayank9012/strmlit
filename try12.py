@@ -1,6 +1,156 @@
 import streamlit as st
 import re
 
+def logo():
+    logocode = """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Website</title>
+        <style>
+            body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            }
+
+            #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            }
+
+            .logo-animation {
+            font-size: 3em;
+            color: #333;
+            position: relative;
+            animation: reveal 5s forwards;
+            }
+
+            .letter {
+            display: inline-block;
+            font-family: Georgia, serif;
+            opacity: 0;
+            animation: revealLetter 0.5s forwards;
+            }
+
+            @keyframes reveal {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+            }
+
+            @keyframes revealLetter {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+            }
+
+            .letter1 {
+            display: flex;
+            font-family: Georgia, serif;
+            font-size: small;
+            opacity: 0;
+            margin-top: 0px;
+            justify-content: center;
+            animation: revealLetter 0.5s forwards;
+            }
+
+            #content {
+            display: none;
+            }
+
+            .ring {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 4px solid #333;
+            border-right: 4px solid #333;
+            border-bottom: 4px solid #333;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: drawRing 2s 1.5s forwards, rotateRing 2s 1.5s forwards;
+            opacity: 0;
+            }
+
+            @keyframes drawRing {
+            0% { width: 0px; height: 0px;  top: 50%; left: 50%; opacity: 0;}
+            100% { width: 200px; height: 200px; top: 38%; left: 55%; transform: translate(-50%, -50%); opacity: 1;}
+            }
+
+            @keyframes rotateRing {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(-90deg); }
+            }
+
+            .ring1 {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 7px solid #333;
+            border-right: 7px solid #333;
+            border-bottom: 7px solid #333;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: drawRing1 2s 1.5s forwards, rotateRing1 2s 1.5s forwards;
+            opacity: 0;
+            }
+
+            @keyframes drawRing1 {
+            0% { width: 0px; height: 0px;  top: 50%; left: 50%; opacity: 0;}
+            100% { width: 180px; height: 180px; top: 38%; left: 55%; transform: translate(-50%, -50%); opacity: 1;}
+            }
+
+            @keyframes rotateRing1 {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(-90deg); }
+            }
+        </style>
+
+        </head>
+        <body>
+        <div id="loading-screen">
+            <div class="logo-animation">
+            <span class="letter" style="animation-delay: 0.3s;">N</span>
+            <span class="letter" style="animation-delay: 0.6s;">o</span>
+            <span class="letter" style="animation-delay: 0.9s;">S</span>
+            <span class="letter" style="animation-delay: 1.2s;">E</span>
+            <span class="letter1" style="animation-delay: 1.5s;"><br>&nbsp;Loading ...</span>
+            <div class="ring"></div>
+            <div class="ring1"></div>
+            </div>
+        </div>
+
+        <div id="content">
+            <!-- Your webpage content goes here -->
+        </div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Simulate loading time
+        setTimeout(function() {
+            // Hide loading screen
+            document.getElementById("loading-screen").style.display = "none";
+            // Show webpage content
+            document.getElementById("content").style.display = "block";
+        }, 5000); // Change 5000 to your desired loading time in milliseconds
+        });
+        </script>
+
+
+        </body>
+        </html>
+        """
+    st.markdown(logocode,unsafe_allow_html=True)
+
+
 def validate_email(email):
     # Regular expression for basic email validation
     pattern = r'^\S+@\S+\.\S+$'
@@ -25,16 +175,17 @@ navbar1 = """
         margin: 10px;
     }
     .navigation {
-        background-color: #ad3838;
-        overflow: hidden;
-        width: 100%;
-        display: flex;
-        margin: 0 auto; /* Center the navigation bar horizontally */
-        position: relative; /* Fixed position at the top of the viewport */
-        top: 38px; /* Distance from the top of the viewport */
-        left: 50%; /* Center the navigation bar horizontally */
-        transform: translateX(-50%); /* Center the navigation bar horizontally */
-        z-index:1000;
+      background-color: #b6e9d9;
+      overflow: hidden;
+      display: inline;
+      justify-content: flex-start;
+      align-items: right;
+      padding: 10px 20px;
+      top : -40px;
+      position: absolute;
+      width: 100%; /* Adjusted width */
+      z-index: 1000;
+      color: white !important; /* Added !important */
     }
 
     .nav-list {
