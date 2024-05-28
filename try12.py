@@ -211,7 +211,6 @@ navbar1 = """
     }
 
     .nav-link:hover {
-      background-color: #57998b;
       border-radius: 5px;
       color:white;
     }
