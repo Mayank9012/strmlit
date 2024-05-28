@@ -173,12 +173,14 @@ navbar1 = """
     body {
         font-family: Arial, sans-serif;
         margin: 10px;
+	padding 0px;
+ 
     }
     .navigation {
       background-color: #b6e9d9;
       overflow: hidden;
-      display: inline;
-      justify-content: flex-start;
+      display: flex;
+      justify-content: space-between;
       align-items: right;
       padding: 10px 20px;
       top : -40px;
