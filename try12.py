@@ -364,9 +364,7 @@ def main():
     # Sidebar content
     with st.sidebar:
 	    time.sleep(5)
- 
-		# Define CSS styles for the progress bars
-        st.markdown(
+	    st.markdown(
 			"""
 			<style>
 			.stProgress {
