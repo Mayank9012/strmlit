@@ -363,7 +363,7 @@ def main():
     """, unsafe_allow_html=True)
     # Sidebar content
     with st.sidebar:
-	    time.sleep(5)
+	time.sleep(5)
  
 		# Define CSS styles for the progress bars
         st.markdown(
