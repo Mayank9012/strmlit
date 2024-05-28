@@ -179,12 +179,12 @@ def render_navbar():
         .navigation {
             background-color: #b6e9d9;
             overflow: hidden;
-            display: flex;
+            display: inline;
             justify-content: space-between;
             align-items: right;
             padding: 10px 20px;
             top : -40px;
-            position: fixed;
+            position: absolute;
             width: 100%; /* Adjusted width */
             z-index: 1000;
             color: white;
