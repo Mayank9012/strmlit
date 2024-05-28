@@ -184,7 +184,7 @@ navbar1 = """
       padding: 10px 20px;
       top : -40px;
       position: absolute;
-      width: 1000px; /* Adjusted width */
+      width: 1200px; /* Adjusted width */
       z-index: 1000;
       color: white !important; /* Added !important */
     }
