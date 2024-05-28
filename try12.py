@@ -347,10 +347,9 @@ def render_navbar():
   """
   st.markdown(navbar, unsafe_allow_html=True)
 
-
+render_navbar()
 # Main function
 def main():
-    st.markdown(navbar1,unsafe_allow_html=True)
     st.markdown("""
     <style>
         [data-testid=stSidebar] {
