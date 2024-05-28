@@ -352,15 +352,15 @@ def main():
                 align-items: left;
                 color: white;
                 font-weight: bold;}
+		
 	        .stStepCircle1 {
                 background-color:none;
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                border: 4px solid #fff; /* Add white border */
                 display:flex;
                 margin-bottom:74px;
-                transform: translateX(250%) translatey(-300%);
+                transform: translateX(250%) translatey(-900%);
                 justify-content: left;
                 align-items: left;
                 color: white;
