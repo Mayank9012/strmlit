@@ -352,8 +352,6 @@ def main():
                 align-items: left;
                 color: white;
                 font-weight: bold;}
-			""",
-			unsafe_allow_html=True,)
 	        .stStepCircle1 {
                 background-color:none;
                 width: 20px;
