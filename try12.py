@@ -347,7 +347,7 @@ def main():
                 border: 4px solid #fff; /* Add white border */
                 display:flex;
                 margin-bottom:66px;
-                transform: translateX(160%) translatey(-220%);
+                transform: translateX(150%) translatey(-220%);
                 justify-content: left;
                 align-items: left;
                 color: white;
@@ -360,7 +360,7 @@ def main():
                 border-radius: 50%;
                 display:flex;
                 margin-bottom:74px;
-                transform: translateX(260%) translatey(-3100%);
+                transform: translateX(260%) translatey(-3115%);
                 justify-content: left;
                 align-items: left;
                 color: white;
