@@ -158,7 +158,6 @@ def logo():
         """
     st.markdown(logocode,unsafe_allow_html=True)
              
-logo()
 
 @st.experimental_dialog("Confirmation")
 def pop():
@@ -363,8 +362,9 @@ def main():
     """, unsafe_allow_html=True)
     # Sidebar content
     with st.sidebar:
-	    time.sleep(5)
-	    st.markdown(
+ 
+		# Define CSS styles for the progress bars
+        st.markdown(
 			"""
 			<style>
 			.stProgress {
