@@ -168,66 +168,66 @@ def pop():
 
 
 def render_navbar():
-    navbar = """
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
-        .navigation {
-            background-color: #b6e9d9;
-            overflow: hidden;
-            display: inline;
-            justify-content: flex-start;
-            align-items: right;
-            padding: 10px 20px;
-            top : -40px;
-            position: absolute;
-            width: 100%; /* Adjusted width */
-            z-index: 1000;
-            color: white;
-        }
+  navbar = """
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .navigation {
+      background-color: #b6e9d9;
+      overflow: hidden;
+      display: inline;
+      justify-content: flex-start;
+      align-items: right;
+      padding: 10px 20px;
+      top : -40px;
+      position: absolute;
+      width: 100%; /* Adjusted width */
+      z-index: 1000;
+      color: white !important; /* Added !important */
+    }
 
-        .nav-list {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            color:white;
-        }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: white !important; /* Added !important */
+    }
 
-        .nav-item {
-            float: left;
-            margin-right: 20px;
-            color: white;
-        }
+    .nav-item {
+      float: left;
+      margin-right: 20px;
+      color: white !important; /* Added !important */
+    }
 
-        .nav-link {
-            display: block;
-            background-color: white;
-            text-align: center;
-            text-decoration: none;
-        }
+    .nav-link {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+    }
 
-        .nav-link:hover {
-            background-color: #57998b;
-            border-radius: 5px;
-            color:white;
-        }
+    .nav-link:hover {
+      background-color: #57998b;
+      border-radius: 5px;
+      color:white;
+    }
 
-    </style>
-    
-    <nav class="navigation">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
-        </ul>
-    </nav>
-    """
-    st.markdown(navbar, unsafe_allow_html=True)
+  </style>
+   
+  <nav class="navigation">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
+    </ul>
+  </nav>
+  """
+  st.markdown(navbar, unsafe_allow_html=True)
+
 
 # Main function
 def main():
