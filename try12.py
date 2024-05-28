@@ -360,7 +360,7 @@ def main():
                 border-radius: 50%;
                 display:flex;
                 margin-bottom:74px;
-                transform: translateX(250%) translatey(-900%);
+                transform: translateX(250%) translatey(-1700%);
                 justify-content: left;
                 align-items: left;
                 color: white;
