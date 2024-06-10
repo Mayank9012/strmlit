@@ -1,7 +1,7 @@
 import time
 import streamlit as st
 import streamlit.components.v1 as components
-
+st.write("#")
 st.markdown("""
 <style>
             [data-testid="stAppViewContainer"] {
@@ -101,34 +101,41 @@ with st.container():
 scroll_script = """
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var scrollDownButton = document.querySelector('.scroll-down a');
+    var scrollDownButton = document.querySelector('.scroll-down1 a');
     var scrollSection = document.getElementById('section2');
-    
-    // Hide the scroll-down button initially
-    scrollDownButton.style.display = 'none';
-    
-    // Show the scroll-down button when scrolled to the section
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > scrollSection.offsetTop) {
+    var loaded = false;
+
+    // Function to toggle visibility of scroll-down button
+    function toggleScrollButton() {
+        if (loaded && window.scrollY > scrollSection.offsetTop) {
             scrollDownButton.style.display = 'block';
         } else {
             scrollDownButton.style.display = 'none';
         }
-    });
-    
+    }
+
+    // Show the scroll-down button when scrolled to the section
+    window.addEventListener('scroll', toggleScrollButton);
+
     // Toggle visibility of scroll-down button when clicked
     scrollDownButton.addEventListener('click', function(event) {
         event.preventDefault();
-        var scrollAmount = scrollSection.offsetTop - (window.innerHeight * 0.5); // Calculate scroll amount
+        var scrollAmount = scrollSection.offsetTop - (window.innerHeight * 0); // Calculate scroll amount
         window.scrollTo({
             top: scrollAmount,
             behavior: 'smooth'
         });
         scrollDownButton.style.display = 'none';
     });
-});
 
+    // Set loaded to true after a brief delay to avoid immediate scroll check
+    setTimeout(function() {
+        loaded = true;
+        toggleScrollButton();
+    }, 1000); // Adjust the delay if needed
+});
 </script>
+
 """
 
 
@@ -205,7 +212,7 @@ def main():
 			
         [class="element-container st-emotion-cache-1aege4m e1f1d6gn4"]{
                 
-			
+			 opacity: 1;
         }
 			
         [class="st-emotion-cache-r421ms e1f1d6gn0"] img{
@@ -299,7 +306,6 @@ def main():
 
 
 	""",unsafe_allow_html=True)
-	st.html(scroll_script)
 	st.html(""" 
 		 <style>
 		 .circle:hover{
@@ -341,7 +347,7 @@ def main():
 			}
 
 			[class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(66px) translateY(270px);
+				transform: translateX(63px) translateY(175px);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
@@ -396,7 +402,7 @@ def main():
                 }
                 }
 			 img{
-			 transform: translateX(133px) translateY(-80px);
+			 transform: translateX(133px) translateY(-190px);
 			 position:  absolute;
 			 animation-delay:2s;
              }
@@ -408,7 +414,7 @@ def main():
 		      letter-spacing: 4px;
 		      overflow: hidden;
 		      color:white;
-		      transform: translateX(128px) translateY(-120px);
+		      transform: translateX(128px) translateY(-198px);
 		      
 		    }
 		@keyframes glow {
@@ -434,13 +440,22 @@ def main():
                    )
 	st.markdown("""
 	<div id="section1" class="section">
-    <p class = "nose" style="font-family: Georgia ; color: white ; font-size: 56px; font-weight: bold; transform: translateY(190px) translateX(-10px); text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;   animation: glow 1s ease-in-out infinite alternate, flicker 1s infinite alternate;
+    <p class = "nose" style="font-family: Georgia ; color: white ; font-size: 56px; font-weight: bold; transform: translateY(70px) translateX(-10px); text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;   animation: glow 1s ease-in-out infinite alternate, flicker 1s infinite alternate;
 "> Novel Species</p>
     </div>
 			 """,unsafe_allow_html=True)
 	col1,col2 = st.columns([1,1])
+	st.write(" ")
+	st.write(" ")
+	st.write(" ")
+	st.write(" ")
+	st.write(" ")
+	st.write(" ")
+	st.write(" ")
 	with col1:
 		st.link_button("Submit query", "http://localhost:8501")
+		st.write(" ")
+		st.write(" ")
 		st.write(" ")
 		st.write(" ")
 		st.write(" ")
@@ -455,25 +470,28 @@ def main():
 		st.write(" ")
 		st.write(" ")
 
+	st.html(scroll_script)
 	
 #	st.markdown(scroll_down_button, unsafe_allow_html=True)
 	st.markdown("""
     <div class="scroll-down">
-        <a href="#section2" ><div class="scroll-down1" src="" alt="Scroll down" style = "color:white; transform: translateX(-36px) translateY(415px);"></div></a>
+        <a href="#section2" ><div class="scroll-down1" src="" alt="Scroll down" style = "color:white; transform: translateX(-36px) translateY(185px);"></div></a>
     </div>
 			 """,unsafe_allow_html=True)
-	st.markdown("<hr style='transform: translateX(-500px) translateY(417px); justify-content:space-around; background-color: #3d6154; margin:0px; height:4px; width: 1700px; margin-bottom:150px;'>", unsafe_allow_html=True)
+	
+	st.markdown("<hr style='transform: translateX(-500px) translateY(194px); justify-content:space-around; background-color: #3d6154; margin:0px; height:4px; width: 1700px; margin-bottom:150px;'>", unsafe_allow_html=True)
 	st.write(" ")
 	st.write(" ")
 	st.write(" ")
 	st.write(" ")
+
 	st.markdown("""
-        	<div style = "transform: translateX(240px) translateY(271px); position:relative;">
+        	<div style = "transform: translateX(240px) translateY(221px); position:relative;">
 			 <h1> Features </h1>
 		</div>""",unsafe_allow_html=True)
 
 	st.markdown("""
-		<div id="section2" class="section" >
+		<div id="section2" class="section">
 		</div>
 
 	""", unsafe_allow_html=True)
