@@ -1,193 +1,46 @@
+import time
 import streamlit as st
-import re
+import streamlit.components.v1 as components
 
-def logo():
-    logocode = """
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Website</title>
-        <style>
-            body {
-	    position:fixed;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
+st.markdown("""
+<style>
+            [data-testid="stAppViewContainer"] {
+            background-color: #e0ece9;
             }
-
-            #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
+		
+            [class="st-emotion-cache-r421ms e1f1d6gn0"]{
+                background-color: white;
             }
+            body,html{
+            	overflow-x:hidden;
+            	}
+            </style>
+""", unsafe_allow_html=True)
+        
 
-            .logo-animation {
-            font-size: 3em;
-            color: #333;
-            position: relative;
-            animation: reveal 5s forwards;
-            }
-
-            .letter {
-            display: inline-block;
-            font-family: Georgia, serif;
-            opacity: 0;
-            animation: revealLetter 0.5s forwards;
-            }
-
-            @keyframes reveal {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-            }
-
-            @keyframes revealLetter {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-            }
-
-            .letter1 {
-            display: flex;
-            font-family: Georgia, serif;
-            font-size: small;
-            opacity: 0;
-            margin-top: 0px;
-            justify-content: center;
-            animation: revealLetter 0.5s forwards;
-            }
-
-            #content {
-            display: none;
-            }
-
-            .ring {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 4px solid #333;
-            border-right: 4px solid #333;
-            border-bottom: 4px solid #333;
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: drawRing 2s 1.5s forwards, rotateRing 2s 1.5s forwards;
-            opacity: 0;
-            }
-
-            @keyframes drawRing {
-            0% { width: 0px; height: 0px;  top: 50%; left: 50%; opacity: 0;}
-            100% { width: 200px; height: 200px; top: 38%; left: 55%; transform: translate(-50%, -50%); opacity: 1;}
-            }
-
-            @keyframes rotateRing {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(-90deg); }
-            }
-
-            .ring1 {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 7px solid #333;
-            border-right: 7px solid #333;
-            border-bottom: 7px solid #333;
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: drawRing1 2s 1.5s forwards, rotateRing1 2s 1.5s forwards;
-            opacity: 0;
-            }
-
-            @keyframes drawRing1 {
-            0% { width: 0px; height: 0px;  top: 50%; left: 50%; opacity: 0;}
-            100% { width: 180px; height: 180px; top: 38%; left: 55%; transform: translate(-50%, -50%); opacity: 1;}
-            }
-
-            @keyframes rotateRing1 {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(-90deg); }
-            }
-        </style>
-
-        </head>
-        <body>
-        <div id="loading-screen">
-            <div class="logo-animation">
-            <span class="letter" style="animation-delay: 0.3s;">N</span>
-            <span class="letter" style="animation-delay: 0.6s;">o</span>
-            <span class="letter" style="animation-delay: 0.9s;">S</span>
-            <span class="letter" style="animation-delay: 1.2s;">E</span>
-            <span class="letter1" style="animation-delay: 1.5s;"><br>&nbsp;Loading ...</span>
-            <div class="ring"></div>
-            <div class="ring1"></div>
-            </div>
-        </div>
-
-        <div id="content">
-            <!-- Your webpage content goes here -->
-        </div>
-
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        // Simulate loading time
-        setTimeout(function() {
-            // Hide loading screen
-            document.getElementById("loading-screen").style.display = "none";
-            // Show webpage content
-            document.getElementById("content").style.display = "block";
-        }, 5000); // Change 5000 to your desired loading time in milliseconds
-        });
-        </script>
-
-
-        </body>
-        </html>
-        """
-    st.markdown(logocode,unsafe_allow_html=True)
-
-
-def validate_email(email):
-    # Regular expression for basic email validation
-    pattern = r'^\S+@\S+\.\S+$'
-    if re.match(pattern, email):
-        return True
-    else:
-        return False
-             
-
-@st.experimental_dialog("Confirmation")
-def pop():
-    st.success("Your query is submitted successfully")
-    st.write(f"Your Job-ID is AAAAAAA")
-    st.link_button("Check Status","http://localhost:8502")
-                
-
-# Define the navigation bar HTML
+#The navigation bar HTML
 navbar1 = """
     <style>
     body {
-      margin: 0;
-      padding: 0;
+      margin: 10px;
+      padding: 10px;
       font-family: Arial, sans-serif;
     }
     .navigation {
-      background-color: #b6e9d9;
+      background-color: black;
       overflow: hidden;
-      display: inline;
-      justify-content: flex-start;
-      align-items: right;
-      padding: 10px 20px;
-      top : -40px;
-      position: absolute;
-      width: 1100px; /* Adjusted width */
-      z-index: 1000;
-      color: white !important; /* Added !important */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 10px 10px;
+      width: 100%; /* Adjusted width */
+      border-bottom : 8px solid white;
+      top : 0rem;
+      right: 0rem;
+      position: fixed;
+      z-index:9999999999999999;
+      margin-bottom: 80px;
+	  
     }
 
     .nav-list {
@@ -195,13 +48,15 @@ navbar1 = """
       margin: 0;
       padding: 0;
       overflow: hidden;
-      color: white !important; /* Added !important */
+    width: 100%; /* Adjusted width */
+      transform: translateX(0%);
     }
 
     .nav-item {
+    display: block;
       float: left;
-      margin-right: 20px;
-      color: white !important; /* Added !important */
+      margin-right: 10px;
+      
     }
 
     .nav-link {
@@ -214,263 +69,456 @@ navbar1 = """
       border-radius: 5px;
       color:white;
     }
-
-    .dropdown {
-        position: relative;
-        display: flexbox;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: fixed;
-        top: 40px; /* adjust the top position */
-        left: 50%; /* adjust the left position */
-        transform: translateX(-50%); /* center the dropdown horizontally */
-        background-color: #f9f9f9;
-        width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(15, 14, 14, 0.2);
-        z-index: 1;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-    }
-    .dropdown-item {
-        color: rgb(241, 231, 231);
-        text-align: left;
-        padding: 8px 12px; /* Adjust padding */
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-item:hover {
-        background-color:#57998b;
-    }
-
-    .dropdown.active .dropdown-content {
-        display: block; 
-    }
-
-    .dropdown .dropbtn {
-        outline: none;
-    }
-
-    .dropdown-content.active {
-        display: contents;
-    }
-
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const dropdownBtn = document.querySelector('.dropdown .dropbtn');
-        const dropdownContent = document.querySelector('.dropdown-content');
-
-        dropdownBtn.addEventListener('click', () => {
-            dropdownContent.classList.toggle('active');
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!event.target.closest('.dropdown')) {
-                dropdownContent.classList.remove('active');
-            }
-        });
-    });
-    </script>
-
 
     <nav class="navigation">
     <ul class="nav-list">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item" ><a href="#" class="nav-link" style = 'color: white; font-weight:bold;'>Home </a></li><li class="nav-item" style="color:grey; transform:translate(-50px);" >|</li>
+        <li class="nav-item"><a href="#" class="nav-link" style = 'color: white; font-weight:bold;'>About</a></li><li class="nav-item" style="color:grey; transform:translate(-50px);"  >|</li>
         <li class="nav-item dropdown">
-        <a href="javascript:void(0)" class="nav-link dropbtn">Help</a>
-        <div class="dropdown-content">
-            <a href="#" class="dropdown-item">User Guide</a>
-            <a href="#" class="dropdown-item">FAQ</a>
-            <a href="#" class="dropdown-item">Contact</a>
-        </div>
+        <a href="#" class="nav-link dropbtn" style = 'color: white; font-weight:bold;'>Help</a>
         </li>
     </ul>
     </nav>
+	
 """
-st.markdown(navbar1,unsafe_allow_html=True)
-# Main function
-def main():
-    st.markdown("""
-    <style>
-        [data-testid=stSidebar] {
-            background-color: #0f4233;
+st.markdown("""
+            <style>
+			.nav-list{
+			display: flex;
+			justify-content: center;
+			
+			}
+			.nav-link{
+			text-align:center;
+			transform: translateX(-50px);
+            }
+            </style>
+            """, unsafe_allow_html=True)
+with st.container():
+    st.markdown(navbar1,unsafe_allow_html=True)
+
+scroll_script = """
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var scrollDownButton = document.querySelector('.scroll-down a');
+    var scrollSection = document.getElementById('section2');
+    
+    // Hide the scroll-down button initially
+    scrollDownButton.style.display = 'none';
+    
+    // Show the scroll-down button when scrolled to the section
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > scrollSection.offsetTop) {
+            scrollDownButton.style.display = 'block';
+        } else {
+            scrollDownButton.style.display = 'none';
         }
-    </style>
-    """, unsafe_allow_html=True)
-    # Sidebar content
-    with st.sidebar:
- 
-		# Define CSS styles for the progress bars
-        st.markdown(
-			"""
-			<style>
-			.stProgress {
-				display: flex;
-				justify-content: center; /* Center horizontally */
-				align-items: center; /* Center vertically */
-				height: 150px; /* Adjust height as needed */
-                transform: translateX(-50%) translateY(50%);
-			}
+    });
+    
+    // Toggle visibility of scroll-down button when clicked
+    scrollDownButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        var scrollAmount = scrollSection.offsetTop - (window.innerHeight * 0.5); // Calculate scroll amount
+        window.scrollTo({
+            top: scrollAmount,
+            behavior: 'smooth'
+        });
+        scrollDownButton.style.display = 'none';
+    });
+});
 
-			.stProgress > div {
-				display: flex;
-				justify-content: space-between; /* Spread the progress circles evenly */
-				align-items: center; /* Center vertically */
-				width: 450px; /* Adjust width of the progress bar */
-			}
+</script>
+"""
 
-			.stProgress > div > div {
-				width: 1450px; /* Adjust width of each progress circle */
-                transform: translateX(-165px) translateY(185px);
 
-			}
 
-			.stProgress > div > div > div  {
-				background-color: #cac1c3;
-				transform: rotate(90deg);
-				justify-content: center;     
-                
-			}
-            .stProgress > div > div > div > div {
-                background-color: #c2f7e7;
+def main():
+	st.markdown("""
+	<style>
+		[class="st-emotion-cache-r421ms e1f1d6gn0"]{
+			transform: translateX(-450px) translateY(20px);
+			width: 550px;
+			height:400px;
+			 position:ABSOLUTE;
+			 background-color: #e0ece9;
+			 border:1px solid #e0ece9;
+		}
+		.circle-container {
+            display: flex;
+             justify-content: space-around;
+			 width: 1500px;
+			 transform: translateX(-400px);
             }
-            .stStepCircle {
-                background-color:#299776;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                border: 4px solid #fff; /* Add white border */
-                display:flex;
-                margin-bottom:66px;
-                transform: translateX(150%) translatey(-220%);
-                justify-content: left;
-                align-items: left;
-                color: white;
-                font-weight: bold;}
-		
-	        .stStepCircle1 {
-                background-color:none;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                display:flex;
-                margin-bottom:76px;
-                transform: translateX(260%) translatey(-3115%);
-                justify-content: left;
-                align-items: left;
-                color: white;
-                font-weight: bold;}
-			""",
-			unsafe_allow_html=True,)
-        steps = ["Submit_query", "OGRI", "16S_Tree", "WGS_Tree","Summary"]
-        progress = st.progress(0)
-        # Display progress bar with step circles
-        with st.container():
-            for i, step in enumerate(steps):
-                st.markdown(f'<div class="stStepCircle"></div>', unsafe_allow_html=True)
-                if i < len(steps) - 1:
-                    st.write("")
-                else:
-                    st.write(f"")
-            for i, step in enumerate(steps):
-                st.markdown(f'<div class="stStepCircle1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{step}</div>', unsafe_allow_html=True)
-                if i < len(steps) - 1:
-                    st.write("")
-                else:
-                    st.write(f"")
 
-        st.markdown("""
-            <style>
-                    [data-testid=stContainer] {
-                        outline: 2px solid red;
-                        border-radius: 2px;
-                    }
-                    .stContainer {
-                        background-color: grey; 
-                        margin-left: 250px; /* Adjusted margin */
-                    }
-            </style>
-        """, unsafe_allow_html=True)
-    with st.container(border=True):
-        st.markdown(
-            """
-            <style>
-            .stContainer {
-                background-color: grey; 
-            }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
-
-        st.markdown(""" <style>
-            .heading{
-                margin: 0px; 
-                position: auto; 
-                top: 0px; 
-                left: 15%; 
-                z-index: 1;
-                font-family: Georgia;
-            }
-            hr {
-                display: flex;
-                border: none;
-                height: 1px;
-                color: #333;
-                width: 100%;
-                margin-top: 0px;
-                background-color: grey;
-                }
-            </style>""", unsafe_allow_html=True)
+        .circle {
+            width: 250px;
+            height: 350px;
+            border-radius: 10%;
+			margin:100px;
+			justify-content: space-around;
+            background-color: white; /* Change the color as needed */
+			
+        }
         
-        header="""
-            <div class = "heading">
-                <h2>Submit your query</h2>
-            </div>    
+		</style>
+	""",unsafe_allow_html=True)
 
-            """
-        st.markdown(header,unsafe_allow_html=True)  
+	st.markdown("""
+	<style>
+			 @import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
+		[class="st-emotion-cache-r421ms e1f1d6gn0"]{
+			transform: translateX(-450px) translateY(20px);
+			width: 1550px;
+			height:400px;
+			 background-color: none;
+			 opacity: 1;
+			 border:1px solid #3d6154;
+			
+		}
+		.circle-container {
+            display: flex;
+			width: 100%;
+		
+			transform: translateX(50px) translateY(1070px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 170vh; /* Adjusted height for demonstration */
+            position: absolute;
+			 overflow-y: hidden;
+            }
 
-        # Main content
-        st.markdown("<hr style='margin-top: 0px; height:2px; margin-bottom:40px;'>", unsafe_allow_html=True)
-        with st.form("query"):
-            st.markdown("<b>Query file (.fasta)*</b>", unsafe_allow_html=True)
-            query_file = st.file_uploader("", type=["fasta","fna"])
-
-            st.markdown("<hr style='margin-bottom:1px; margin-top:1px; baclgroung-color: grey;'>", unsafe_allow_html=True)
-
-            st.markdown("<b>Extra Features</b>", unsafe_allow_html=True)
-            st.checkbox("16S Tree")
-            st.checkbox("OGRI")
-            st.checkbox("WGS Tree")
-            st.markdown("<hr style='margin-top:3px; margin-bottom:3px; background-color: grey;'>", unsafe_allow_html=True)
-
-            st.markdown("<b>Email Address*</b>", unsafe_allow_html=True)
-            col1, col2 = st.columns(2)
-            with col1:
-                email = st.text_input("", placeholder="abc@gmail.com")
-            with col2:
-                st.write("")    
-            submit = st.form_submit_button("Submit")
+        .circle {
+            width: 350px;
+            height: 400px;
+            border-radius: 10%;
+			 margin:50px;
+			 margin-right: 150px;
+            background-color: white; /* Change the color as needed */
+			transition: transform 0.3s ease;
+			position: relative;
             
-            flag=0
-            if submit:
-                if not query_file or not email:
-                    st.error("Please fill in all required fields")
-                else:
-                    if validate_email(email):
-                        flag=1
-                        progress.progress(25)
-                        pop()
-                    else:
-                        st.error("Please enter a valid email address.")
+            margin-bottom: 20px;
 
+        }
+			
+        [class="element-container st-emotion-cache-1aege4m e1f1d6gn4"]{
+                
+			
+        }
+			
+        [class="st-emotion-cache-r421ms e1f1d6gn0"] img{
+            text-align: center;
+            display:flex;
+			transform: translateX(-160px) translateY(-180px);
+			height: 918px;
+			z-index:1;
+			 order: 1;
+			
+        }
+		button[title="View fullscreen"]{
+            visibility: hidden;
+        }
+      :root {
+	--cards: 4;
+	--cardHeight: 350px;
+	--cardTopPadding: 0.5em;
+	--cardMargin: 2vw;
+	}
+
+	.containercards {
+		width: 90%;
+		margin: 0 auto;
+		transform: translateY(300px) translateX(-40px);
+	}
+
+	#cards {
+		list-style: none;
+		padding-left: 20px;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(var(--cards), var(--cardHeight));
+		gap: var(--cardMargin);
+		padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+		margin-bottom: var(--cardMargin);
+	}
+
+	#card1 {
+		--index: 1;
+	}
+	#card2 {
+		--index: 2;
+	}
+	#card3 {
+		--index: 3;
+	}
+	#card4 {
+		--index: 4;
+	}
+
+	.card {
+		position: sticky;
+		top: 0;
+		padding-top: calc(var(--index) * var(--cardTopPadding));
+	}
+
+	#card1 .card-body {
+		background-color:white;
+	}
+	#card2 .card-body {
+		/* background-color: #7EC4CF; */
+		background-color: white;
+	}
+	#card3 .card-body {
+		background-color:white;
+	}
+	#card4 .card-body {
+		background-color: white;
+	}
+
+	.card-body {
+		box-sizing: border-box;
+		padding: 30px;
+		border-radius: 50px;
+		box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+		height: var(--cardHeight);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.5s;
+	}
+
+	h2 {
+		font-size: 2.5em;
+	}
+				
+
+		
+		</style>
+
+
+	""",unsafe_allow_html=True)
+	st.html(scroll_script)
+	st.html(""" 
+		 <style>
+		 .circle:hover{
+			 transform: scale(1.3);
+		 opacity: 1; /* Increase opacity on hover */
+        }
+		 </style>""")
+	with st.container(border=True):
+		st.image("https://iili.io/JyabV4f.jpg", # URL of the image
+                    caption='',
+                    width=1900, # Width of the image
+                    use_column_width=False, # Don't use full column width
+                    clamp=False, # Don't clip the image if it's too large
+                    channels='RGB', # Specify channels
+                   )
+	st.markdown("""
+	<style>    
+			body, html {
+				background-color: #e0ece9;
+				height: 100%;
+				scroll-behavior: smooth; /* Add smooth scrolling behavior */
+                overflow-y: hidden;
+			}
+			.section {
+				width: 100%;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+
+			.scroll-down {
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%) trasnlateY(220px);
+				z-index: 1; /* Ensure arrow is above section */
+			}
+
+			[class="st-emotion-cache-otc82o e16zdaao0"]{
+				transform: translateX(66px) translateY(270px);
+				width: 170px;
+				height:45px;
+				border: 2px solid #3d6154;
+                position:absolute;
+			}
+			 .scroll-down1 {
+                height: 40px;
+                width: 25px;
+                border: 2px solid white;
+                position: absolute;
+                left: 50%;
+                bottom: 20px;
+                border-radius: 20px;
+                cursor: pointer;
+                }
+			 
+                .scroll-down1::before,
+                .scroll-down1::after {
+                content: "";
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                height: 7px;
+                width: 7px;
+                transform: translate(-50%, -100%) rotate(45deg);
+                border: 2px solid white;
+                border-top: transparent;
+                border-left: transparent;
+                animation: scroll-down1 1s ease-in-out infinite;
+                }
+			 
+                .scroll-down1::before {
+                top: 30%;
+                animation-delay: 0.3s;
+                /* animation: scroll-down1 1s ease-in-out infinite; */
+                }
+
+                @keyframes scroll-down1 {
+                0% {
+                    /* top:20%; */
+                    opacity: 0;
+                }
+                30% {
+                    opacity: 1;
+                }
+                60% {
+                    opacity: 1;
+                }
+                100% {
+                    top: 90%;
+                    opacity: 0;
+                }
+                }
+			 img{
+			 transform: translateX(133px) translateY(-80px);
+			 position:  absolute;
+			 animation-delay:2s;
+             }
+             #welcomeText {
+		      position: relative;
+		      font-family: Georgia;
+		      font-weight:bold;
+		      font-size: 2em;
+		      letter-spacing: 4px;
+		      overflow: hidden;
+		      color:white;
+		      transform: translateX(128px) translateY(-120px);
+		      
+		    }
+		@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); }
+  50% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+  100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+		</style>
+			 
+	""",unsafe_allow_html=True)
+	st.markdown("""  <p id="welcomeText" style="color:white;">--- Welcome to ---</p>""",unsafe_allow_html=True)
+	st.image("https://svgshare.com/i/171i.svg", # URL of the image
+                    caption='',
+                    width=400, # Width of the image
+                    use_column_width=False, # Don't use full column width
+                    clamp=False, # Don't clip the image if it's too large
+                    channels='RGB', # Specify channels
+                   )
+	st.markdown("""
+	<div id="section1" class="section">
+    <p class = "nose" style="font-family: Georgia ; color: white ; font-size: 56px; font-weight: bold; transform: translateY(190px) translateX(-10px); text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;   animation: glow 1s ease-in-out infinite alternate, flicker 1s infinite alternate;
+"> Novel Species</p>
+    </div>
+			 """,unsafe_allow_html=True)
+	col1,col2 = st.columns([1,1])
+	with col1:
+		st.link_button("Submit query", "http://localhost:8501")
+		st.write(" ")
+		st.write(" ")
+		st.write(" ")
+		st.write(" ")
+
+		
+		
+	with col2:	
+		st.link_button("Check status", "http://localhost:8501")
+		st.write(" ")
+		st.write(" ")
+		st.write(" ")
+		st.write(" ")
+
+	
+#	st.markdown(scroll_down_button, unsafe_allow_html=True)
+	st.markdown("""
+    <div class="scroll-down">
+        <a href="#section2" ><div class="scroll-down1" src="" alt="Scroll down" style = "color:white; transform: translateX(-36px) translateY(415px);"></div></a>
+    </div>
+			 """,unsafe_allow_html=True)
+	st.markdown("<hr style='transform: translateX(-500px) translateY(417px); justify-content:space-around; background-color: #3d6154; margin:0px; height:4px; width: 1700px; margin-bottom:150px;'>", unsafe_allow_html=True)
+	st.write(" ")
+	st.write(" ")
+	st.write(" ")
+	st.write(" ")
+	st.markdown("""
+        	<div style = "transform: translateX(240px) translateY(271px); position:relative;">
+			 <h1> Features </h1>
+		</div>""",unsafe_allow_html=True)
+
+	st.markdown("""
+		<div id="section2" class="section" >
+		</div>
+
+	""", unsafe_allow_html=True)
+	st.markdown("""<img src="https://svgshare.com/i/172P.svg" style = "transform:translateX(-600px) translateY(350px); width: 1900px;" >""", unsafe_allow_html=True)
+	st.markdown("""<img src="https://svgshare.com/i/171M.svg" style = "transform:translateX(-600px) translateY(1300px); width: 1900px;" >""", unsafe_allow_html=True)
+	st.markdown("""
+	    <div class="containercards">
+		<ul id="cards">
+		    <li class="card" id="card1">
+		        <div class="card-body">
+		            <h2>OGRI</h2>
+		        </div>
+		    </li>
+		    <li class="card" id="card2">
+		        <div class="card-body">
+		            <h2>16S Tree</h2>
+		        </div>
+		    </li>
+		    <li class="card" id="card3">
+		        <div class="card-body">
+		            <h2>WGS Tree</h2>
+		        </div>
+		    </li>
+		    <li class="card" id="card4">
+		        <div class="card-body">
+		            <h2>.....</h2>
+		        </div>
+		    </li>
+		</ul>
+	    </div>
+			 """,unsafe_allow_html=True)
+
+	
+	st.markdown("<hr style='transform: translateX(-500px) translateY(200px) ; background-color: #3d6154; margin-top:90px; height:4px; width: 1700px; margin-bottom:150px;'>", unsafe_allow_html=True)
+	st.markdown("""<img src="https://svgshare.com/i/172Q.svg" style = "transform:translateX(-600px) translateY(65px); width: 1900px; " >""", unsafe_allow_html=True)
+
+	st.markdown("""<div id="section3" class="section" >
+		</div>""", unsafe_allow_html=True)
+	
+	st.markdown("""""", unsafe_allow_html=True)
+	st.markdown("""<footer style='transform: translateX(-550px) translateY(1600px); border-top:5px solid darkgrey; width:1800px; height: 100px;'>
+				<p style='color: #3d6154; font-size: 15px;'>© .................</p>
+				</footer>""", unsafe_allow_html=True)
 
 
 if __name__ == '__main__':
-    main()
+	main()
+
