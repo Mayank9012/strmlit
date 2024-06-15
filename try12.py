@@ -3,14 +3,14 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.write("#")
+
 st.markdown("""
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-""",unsafe_allow_html=True)
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+""", unsafe_allow_html=True)
 st.markdown("""
 <style>
     [data-testid="stAppViewContainer"] {
         background-color: white;
-	position:relative;
             scroll-behavior: smooth;
     }
 
@@ -437,15 +437,15 @@ st.markdown("""
 
 		.logo {
             position: relative;
-            width: 500px;
+            width: 25vw;
             transform: translateX(479px) translateY(-30px);
             }
         .nose {
             position: absolute;
             width:450px;
-            transform: translateY(-16vh) translateX(-25vw);
+            transform: translateY(-160px) translateX(-470px);
             font-family: Sans;
-            font-size: 18px; 
+            font-size: 1.2em; 
             font-weight: bold;  
             color:#1c3b29;
             }
@@ -455,9 +455,8 @@ st.markdown("""
             transform: translateX(-570px);
         }
         [data-testid="stIFrame"]{
-            position: relative;
-            bottom:30%;
-	    right:70%;
+            position: absolute;
+            transform: translateX(-60%) translateY(-180%);
             z-index: 99999;
             }
         .card-content {
@@ -539,172 +538,172 @@ st.markdown("""
 
 
 	""",unsafe_allow_html=True)
-	
-st.markdown("""
-        <div id="section1" class="section">
-            	<p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
-            <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
-             <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="scroll-down">
-				<a href="#section2"><div class="scroll-down1"></div></a>
-			</div>
-        </div>
+with st.container():	
+    st.markdown("""
+            <div id="section1" class="section">
+                    <p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
+                <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
+                <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="scroll-down">
+                    <a href="#section2"><div class="scroll-down1"></div></a>
+                </div>
+            </div>
 
-            
+                
 
-""", unsafe_allow_html=True )
-col1,col2 = st.columns([1,1])
+    """, unsafe_allow_html=True )
+    col1,col2 = st.columns([1,1])
 
-with col1:
-	st.link_button("Submit query", "http://localhost:8502")
-				
-with col2:	
-	st.link_button("Check status", "http://localhost:8503")			
+    with col1:
+        st.link_button("Submit query", "http://localhost:8502")
+                    
+    with col2:	
+        st.link_button("Check status", "http://localhost:8503")			
 
-st.markdown("<hr style='position:absolute; background-color: #3d6154; margin: 0; height: 4px; width: 1900px; opacity:0.8; transform: translateX(-568px) translateY(339px);'>", unsafe_allow_html=True)
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-st.write("")
-components.html("""
-<style>
-@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+    st.markdown("<hr style='position:absolute; background-color: #3d6154; margin: 0; height: 4px; width: 1900px; opacity:0.8; transform: translateX(-568px) translateY(339px);'>", unsafe_allow_html=True)
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    components.html("""
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 
 
-#container456 {
-    position: fixed;
-    width: 50%;
-    height: 40%;
-    bacground-color: grey;
-    filter: url(#threshold) blur(0px);
-    top: 30px;
-    left: 0;
-}
-
-#text1,
-#text2 {
-    position: fixed;
-    width: 100%;
-    display: inline-block;
-    font-family: "Raleway", sans-serif;
-    font-size: 4em;
-    text-align: center;
-    color:#1c3b29;
-    user-select: none;
-}
-</style>
-<div id="container456">
-    <span id="text1"></span>
-    <span id="text2"></span>
-</div>
-
-<svg id="filters">
-    <defs>
-        <filter id="threshold">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
-									0 1 0 0 0
-									0 0 1 0 0
-									0 0 0 255 -140" />
-        </filter>
-    </defs>
-</svg>
-<script>
-const elts = {
-    text1: document.getElementById("text1"),
-    text2: document.getElementById("text2")
-};
-
-const texts = [
-    "NoSE",
-    "Novel Species"
-];
-
-const morphTime = 10;
-const cooldownTime = 5;
-
-let textIndex = texts.length - 1;
-let time = new Date();
-let morph = 10;
-let cooldown = cooldownTime;
-
-elts.text1.textContent = texts[textIndex % texts.length];
-elts.text2.textContent = texts[(textIndex + 1) % texts.length];
-
-function doMorph() {
-    morph -= cooldown;
-    cooldown = 0;
-
-    let fraction = morph / morphTime;
-
-    if (fraction > 1) {
-        cooldown = cooldownTime;
-        fraction = 1;
+    #container456 {
+        position: fixed;
+        width: 50%;
+        height: 40%;
+        bacground-color: grey;
+        filter: url(#threshold) blur(0px);
+        top: 30px;
+        left: 0;
     }
 
-    setMorph(fraction);
-}
+    #text1,
+    #text2 {
+        position: fixed;
+        width: 100%;
+        display: inline-block;
+        font-family: "Raleway", sans-serif;
+        font-size: 4em;
+        text-align: center;
+        color:#1c3b29;
+        user-select: none;
+    }
+    </style>
+    <div id="container456">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
 
-function setMorph(fraction) {
-    elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-    elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                        0 1 0 0 0
+                                        0 0 1 0 0
+                                        0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+    <script>
+    const elts = {
+        text1: document.getElementById("text1"),
+        text2: document.getElementById("text2")
+    };
 
-    fraction = 1 - fraction;
-    elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-    elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+    const texts = [
+        "NoSE",
+        "Novel Species"
+    ];
+
+    const morphTime = 10;
+    const cooldownTime = 5;
+
+    let textIndex = texts.length - 1;
+    let time = new Date();
+    let morph = 10;
+    let cooldown = cooldownTime;
 
     elts.text1.textContent = texts[textIndex % texts.length];
     elts.text2.textContent = texts[(textIndex + 1) % texts.length];
-}
 
-function doCooldown() {
-    morph = 0;
+    function doMorph() {
+        morph -= cooldown;
+        cooldown = 0;
 
-    elts.text2.style.filter = "";
-    elts.text2.style.opacity = "100%";
+        let fraction = morph / morphTime;
 
-    elts.text1.style.filter = "";
-    elts.text1.style.opacity = "0%";
-}
-
-function animate() {
-    requestAnimationFrame(animate);
-
-    let newTime = new Date();
-    let shouldIncrementIndex = cooldown > 0;
-    let dt = (newTime - time) / 1000;
-    time = newTime;
-
-    cooldown -= dt;
-
-    if (cooldown <= 0) {
-        if (shouldIncrementIndex) {
-            textIndex++;
+        if (fraction > 1) {
+            cooldown = cooldownTime;
+            fraction = 1;
         }
 
-        doMorph();
-    } else {
-        doCooldown();
+        setMorph(fraction);
     }
-}
 
-animate();
+    function setMorph(fraction) {
+        elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
-</script>
+        fraction = 1 - fraction;
+        elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+    }
+
+    function doCooldown() {
+        morph = 0;
+
+        elts.text2.style.filter = "";
+        elts.text2.style.opacity = "100%";
+
+        elts.text1.style.filter = "";
+        elts.text1.style.opacity = "0%";
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        let newTime = new Date();
+        let shouldIncrementIndex = cooldown > 0;
+        let dt = (newTime - time) / 1000;
+        time = newTime;
+
+        cooldown -= dt;
+
+        if (cooldown <= 0) {
+            if (shouldIncrementIndex) {
+                textIndex++;
+            }
+
+            doMorph();
+        } else {
+            doCooldown();
+        }
+    }
+
+    animate();
+
+    </script>
 
 
-""",height = 400)
+    """,height = 400)
 st.markdown("<div style='text-align: center; margin-top: 50px;  transform: translateY(95px) translateX(40px);'><h1 style='color:#1c3b29;'>Features</h1></div>", unsafe_allow_html=True)
 
 
