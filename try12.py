@@ -143,7 +143,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000); // Adjust the delay if needed
 });
 </script>
+<script>
+function adjustViewport() {
+  const width = window.innerWidth;
+  // Define different viewport settings based on width
+  if (width < 600) {
+    document.documentElement.style.setProperty('zoom', '0.8');
+  } else {
+    document.documentElement.style.setProperty('zoom', '1.0');
+  }
+}
 
+window.addEventListener('resize', adjustViewport);
+adjustViewport(); // Call on initial load
+</script>
 """
 
 
