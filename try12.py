@@ -117,6 +117,10 @@ st.markdown("""
             {   
                 visibility: hidden;
             }
+	    [data-testid="stToolbarActions"]{
+     		visibility:hidden;
+       		display:none;
+	 }
             </style>
             """, unsafe_allow_html=True)
 with st.container():
