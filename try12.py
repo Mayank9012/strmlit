@@ -456,7 +456,8 @@ st.markdown("""
         }
         [data-testid="stIFrame"]{
             position: relative;
-            transform: translateX(-60%) translateY(-180%);
+            bottom:30%;
+	    right:70%;
             z-index: 99999;
             }
         .card-content {
