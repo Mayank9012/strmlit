@@ -8,6 +8,7 @@ st.markdown("""
 <style>
     [data-testid="stAppViewContainer"] {
         background-color: white;
+	position:relative;
             scroll-behavior: smooth;
     }
 
