@@ -453,7 +453,7 @@ st.markdown("""
         }
         [data-testid="stIFrame"]{
             position: absolute;
-            transform: translateX(-490px) translateY(-750px);
+            transform: translateX(-60%) translateY(-180%);
             z-index: 99999;
             }
         .card-content {
@@ -581,8 +581,8 @@ components.html("""
 
 #container456 {
     position: fixed;
-    width: 500px;
-    height: 400px;
+    width: 50%;
+    height: 40%;
     bacground-color: grey;
     filter: url(#threshold) blur(0px);
     top: 30px;
