@@ -452,7 +452,7 @@ st.markdown("""
             transform: translateX(-570px);
         }
         [data-testid="stIFrame"]{
-            position: absolute;
+            position: relative;
             transform: translateX(-60%) translateY(-180%);
             z-index: 99999;
             }
