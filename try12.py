@@ -452,7 +452,7 @@ st.markdown("""
                 letter-spacing: 4px;
                 overflow: hidden;
                 color:#1c3b29;       
-                transform: translateY(-8vw) translateX(5vh);
+                transform: translateY(-13vw) translateX(4.5vh);
 		    }
 
 		.logo {
