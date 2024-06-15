@@ -262,7 +262,7 @@ st.markdown("""
         }
         :root {
             --cards: 4;
-            --cardHeight: 550px;
+            --cardHeight: 50vh;
             --cardTopPadding: 0.5em;
             --cardMargin: 4vw;
         }
@@ -270,13 +270,14 @@ st.markdown("""
         .containercards {
             width: 50%;
             height: 100%;
-            transform: translateY(-480px) translateX(30px);
+            transform: translateY(200px) translateX(30px);
+
         }
 
         #cards {
             list-style: none;
             padding-left: 20px;
-            transform: translateY(350px) translateX(525px);
+            transform: translateY(0px) translateX(525px);
             display: grid;
             width:700px;
             
@@ -303,7 +304,7 @@ st.markdown("""
 
         .card {
             position: sticky;
-            top: 350px;
+            top: 50px;
             padding-top: calc(var(--index) * var(--cardTopPadding));
 
         }
@@ -352,7 +353,7 @@ st.markdown("""
 			}
 			.section {
 				width: 100%;
-				position: relative;
+				position: 
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -365,10 +366,8 @@ st.markdown("""
 				left: 50%;
 			
 			}
-
-			[class="st-emotion-cache-otc82o e16zdaao0"]{
-            display: flex;
-				transform: translateX(-503px) translateY(-585px);
+        			[class="st-emotion-cache-otc82o e16zdaao0"]{
+				transform: translateX(-300%) translateY(150%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
@@ -382,7 +381,7 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(-50px) translateX(-25px);
+                transform: translateY(285px) translateX(15px);
                 }
 			 
                 .scroll-down1::before,
@@ -430,20 +429,18 @@ st.markdown("""
                 letter-spacing: 4px;
                 overflow: hidden;
                 color:#1c3b29;       
-                transform: translateY(-350px) translateX(-5px);
+                transform: translateY(-180px) translateX(35px);
 		    }
-		.logoclass {
-            position: absolute;
-            transform: translateX(395px) translateY(-210px);}
+
 		.logo {
-            position: absolute;
+            position: relative;
             width: 500px;
-            transform: translateX(-149px)
+            transform: translateX(479px) translateY(-30px);
             }
         .nose {
-            position: fixed;
+            position: absolute;
             width:450px;
-            transform: translateY(35px) translateX(-625px);
+            transform: translateY(-150px) translateX(-465px);
             font-family: Sans;
             font-size: 18px; 
             font-weight: bold;  
@@ -456,7 +453,7 @@ st.markdown("""
         }
         [data-testid="stIFrame"]{
             position: absolute;
-            transform: translateX(-490px) translateY(-1100px);
+            transform: translateX(-490px) translateY(-750px);
             z-index: 99999;
             }
         .card-content {
@@ -487,7 +484,7 @@ st.markdown("""
                 top: 160px;
 		    }
             .logoclass {
-            position: fixed;
+            position: absolute;
             }
             .logo {
                 position: fixed;
@@ -540,18 +537,15 @@ st.markdown("""
 	""",unsafe_allow_html=True)
 	
 st.markdown("""
-<div class =" container1">
         <div id="section1" class="section">
             	<p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
-            <div class="logoclass">
             <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
-            </div>
-            <div class="nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+             <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <div class="scroll-down">
 				<a href="#section2"><div class="scroll-down1"></div></a>
 			</div>
         </div>
-</div>
+
             
 
 """, unsafe_allow_html=True )
@@ -563,8 +557,23 @@ with col1:
 with col2:	
 	st.link_button("Check status", "http://localhost:8503")			
 
-st.markdown("<hr style='position:absolute; background-color: #3d6154; margin: 0; height: 4px; width: 1900px; opacity:0.8; transform: translateX(-568px) translateY(-269px);'>", unsafe_allow_html=True)
-
+st.markdown("<hr style='position:absolute; background-color: #3d6154; margin: 0; height: 4px; width: 1900px; opacity:0.8; transform: translateX(-568px) translateY(339px);'>", unsafe_allow_html=True)
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
 components.html("""
 <style>
 @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
@@ -692,13 +701,13 @@ animate();
 
 
 """,height = 400)
-st.markdown("<div style='text-align: center; margin-top: 50px;  transform: translateY(-295px) translateX(40px);'><h1 style='color:#1c3b29;'>Features</h1></div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; margin-top: 50px;  transform: translateY(95px) translateX(40px);'><h1 style='color:#1c3b29;'>Features</h1></div>", unsafe_allow_html=True)
 
 
 
 st.markdown("""
     <div class="container23">
-     <div id="section2" class="section" style=" transform: translateY(-500px); "></div>
+     <div id="section2" class="section" style=" transform: translateY(-50px); background-color:grey;"></div>
         <div class="containercards">
             <ul id="cards">
                 <li class="card" id="card1">
