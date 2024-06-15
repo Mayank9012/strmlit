@@ -3,7 +3,9 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.write("#")
-
+st.markdown("""
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+""",unsafe_allow_html=True)
 st.markdown("""
 <style>
     [data-testid="stAppViewContainer"] {
