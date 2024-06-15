@@ -441,7 +441,7 @@ st.markdown("""
         .nose {
             position: absolute;
             width:450px;
-            transform: translateY(-150px) translateX(-465px);
+            transform: translateY(-16vh) translateX(-25vw);
             font-family: Sans;
             font-size: 18px; 
             font-weight: bold;  
