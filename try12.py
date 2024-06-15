@@ -595,7 +595,7 @@ components.html("""
     width: 100%;
     display: inline-block;
     font-family: "Raleway", sans-serif;
-    font-size: 70pt;
+    font-size: 70px;
     text-align: center;
     color:#1c3b29;
     user-select: none;
