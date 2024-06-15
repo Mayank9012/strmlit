@@ -35,12 +35,12 @@ navbar1 = """
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 10px 10px;      
+      padding: 5px 5px 5px;      
       top : 0rem;
       right: 0rem;
       position: fixed;
       z-index:9999999999999999;
-      margin-bottom: 80px;
+
 	  
     }
 
@@ -51,6 +51,7 @@ navbar1 = """
       overflow: hidden;
     width: 100%; /* Adjusted width */
       transform: translateX(0%);
+      
     }
 
     .nav-item {
@@ -74,10 +75,10 @@ navbar1 = """
 
     <nav class="navigation">
     <ul class="nav-list">
-        <li class="nav-item" ><a href="#" class="nav-link" style = 'color: #1c3b29; font-weight:bold; font-size:20px;'>Home </a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:20px; justify-content: center;" >|</li>
-        <li class="nav-item"><a href="#" class="nav-link" style = 'color:#1c3b29; font-weight:bold; font-size:20px;'>About</a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:20px; justify-content: center;"  >|</li>
+        <li class="nav-item" ><a href="#" class="nav-link" style = 'color: #1c3b29; font-weight:bold; font-size:0.9em;'>Home </a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:0.9em; justify-content: center;" >|</li>
+        <li class="nav-item"><a href="#" class="nav-link" style = 'color:#1c3b29; font-weight:bold; font-size:0.9em;'>About</a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:0.9em; justify-content: center;"  >|</li>
         <li class="nav-item dropdown">
-        	<a href="#" class="nav-link dropbtn" style = 'color: #1c3b29; font-weight:bold; font-size:20px;'>Help</a>
+        	<a href="#" class="nav-link dropbtn" style = 'color: #1c3b29; font-weight:bold; font-size:0.9em;'>Help</a>
         </li>
     </ul>
     </nav>
@@ -88,11 +89,13 @@ st.markdown("""
 			.nav-list{
 				display: flex;
 				justify-content: center;
+            
 			}
 			.nav-link{
 				text-align:center;
 				justify-content: center;
                 -webkit-text-stroke: 0.3px #fff; 
+            
 
             }
             .navigation{
@@ -100,7 +103,20 @@ st.markdown("""
             left: 0rem;
 			background-color:white;
             width:100vw;
+            height: 5vh;
+            position: fixed;
             			}
+            [class="stDeployButton"]
+            {
+                visibility: hidden;
+                display: none;
+
+
+            }
+            [class="st-emotion-cache-czk5ss e16jpq800"]
+            {   
+                visibility: hidden;
+            }
             </style>
             """, unsafe_allow_html=True)
 with st.container():
@@ -143,20 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000); // Adjust the delay if needed
 });
 </script>
-<script>
-function adjustViewport() {
-  const width = window.innerWidth;
-  // Define different viewport settings based on width
-  if (width < 600) {
-    document.documentElement.style.setProperty('zoom', '0.8');
-  } else {
-    document.documentElement.style.setProperty('zoom', '1.0');
-  }
-}
 
-window.addEventListener('resize', adjustViewport);
-adjustViewport(); // Call on initial load
-</script>
 """
 
 
@@ -445,7 +448,7 @@ st.markdown("""
                 letter-spacing: 4px;
                 overflow: hidden;
                 color:#1c3b29;       
-                transform: translateY(-180px) translateX(35px);
+                transform: translateY(-8vw) translateX(5vh);
 		    }
 
 		.logo {
