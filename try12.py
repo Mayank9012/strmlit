@@ -135,9 +135,9 @@ with st.container():
 
 
     #container456 {
-        position: relative;
-        width: 50%;
-        height: 40%;
+        position: fixed;
+        width: 300px;
+        height: 200px;
         bacground-color: grey;
         filter: url(#threshold) blur(0px);
         top: 30px;
@@ -147,7 +147,7 @@ with st.container():
 
     #text1,
     #text2 {
-        position: relative;
+        position: fixed;
         width: 100%;
         display: inline-block;
         font-family: "Raleway", sans-serif;
@@ -487,7 +487,7 @@ st.markdown("""
 			
 			}
         			[class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(-260%) translateY(340%);
+				transform: translateX(-260%) translateY(150%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
@@ -554,16 +554,16 @@ st.markdown("""
                 transform: translateY(-60px);
 		    }
 
-		.logo {
+	.logo {
             position: relative;
             width: 25vw;
-            transform: translateX(100%) translateY(40%);
+            transform: translateX(100%) translateY(50%);
             }
         .nose {
             position: relative;
             max-height: 300px;
             width:25vw;
-            transform:translateX(-80%)  translateY(-50%) ;
+            transform:translateX(-88%)  translateY(-50%) ;
             font-family: Sans;
             font-size: 1.2em; 
             font-weight: bold;  
@@ -577,8 +577,8 @@ st.markdown("""
         [data-testid="stIFrame"]{
             position: relative;
             width: 40%;
-            transform: translateX(-80%) translateY(-150%);
-            z-index: 99999;
+            transform: translateX(-115%) translateY(-115%);
+ 
             }
         .card-content {
             font-size: 1.2em;
