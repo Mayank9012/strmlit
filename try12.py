@@ -4,25 +4,7 @@ import streamlit.components.v1 as components
 
 st.write("#")
 
-st.markdown("""
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-""", unsafe_allow_html=True)
-st.markdown("""
-<style>
-    [data-testid="stAppViewContainer"] {
-        background-color: white;
-            scroll-behavior: smooth;
-    }
 
-    [class="st-emotion-cache-r421ms e1f1d6gn0"]{
-        background-color: white;
-    }
-
-    body, html {
-        overflow-x:hidden;
-    }
-</style>
-""", unsafe_allow_html=True)
 navbar1 = """
     <style>
     body {
@@ -117,124 +99,239 @@ st.markdown("""
             {   
                 visibility: hidden;
             }
-	    [data-testid="stToolbarActions"]{
-     		visibility:hidden;
-       		display:none;
-	 }
             </style>
             """, unsafe_allow_html=True)
 with st.container():
     st.markdown(navbar1,unsafe_allow_html=True)
 
-scroll_script = """
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var scrollDownButton = document.querySelector('.scroll-down1 a');
-    var scrollSection = document.getElementById('section2');
-    var loaded = false;
 
-    // Function to toggle visibility of scroll-down button
-    function toggleScrollButton() {
-        if (loaded && window.scrollY > scrollSection.offsetTop) {
-            scrollDownButton.style.display = 'block';
+with st.container():	
+    st.markdown("""
+            <div id="section1" class="section">
+                    <p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
+                <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
+                <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="scroll-down">
+                    <a href="#section2"><div class="scroll-down1"></div></a>
+                </div>
+            </div>
+
+                
+
+    """, unsafe_allow_html=True )
+    col1,col2 = st.columns([1,1])
+
+    with col1:
+        st.link_button("Submit query", "http://localhost:8502")
+                    
+    with col2:	
+        st.link_button("Check status", "http://localhost:8503")			
+
+    st.markdown("<hr style='position:absolute; background-color: #3d6154; margin: 0; height: 4px; width: 1900px; opacity:0.6; transform: translateX(-568px) translateY(480px);'>", unsafe_allow_html=True)
+
+    components.html("""
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+
+    #container456 {
+        position: relative;
+        width: 50%;
+        height: 40%;
+        bacground-color: grey;
+        filter: url(#threshold) blur(0px);
+        top: 30px;
+        left: 0;
+        
+    }
+
+    #text1,
+    #text2 {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        font-family: "Raleway", sans-serif;
+        font-size: 20vw;
+        text-align: center;
+        color:#1c3b29;
+        user-select: none;
+    }
+    </style>
+    <div id="container456">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
+
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                        0 1 0 0 0
+                                        0 0 1 0 0
+                                        0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+    <script>
+    const elts = {
+        text1: document.getElementById("text1"),
+        text2: document.getElementById("text2")
+    };
+
+    const texts = [
+        "NoSE",
+        "Novel Species"
+    ];
+
+    const morphTime = 10;
+    const cooldownTime = 5;
+
+    let textIndex = texts.length - 1;
+    let time = new Date();
+    let morph = 10;
+    let cooldown = cooldownTime;
+
+    elts.text1.textContent = texts[textIndex % texts.length];
+    elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+    function doMorph() {
+        morph -= cooldown;
+        cooldown = 0;
+
+        let fraction = morph / morphTime;
+
+        if (fraction > 1) {
+            cooldown = cooldownTime;
+            fraction = 1;
+        }
+
+        setMorph(fraction);
+    }
+
+    function setMorph(fraction) {
+        elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+        fraction = 1 - fraction;
+        elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+    }
+
+    function doCooldown() {
+        morph = 0;
+
+        elts.text2.style.filter = "";
+        elts.text2.style.opacity = "100%";
+
+        elts.text1.style.filter = "";
+        elts.text1.style.opacity = "0%";
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        let newTime = new Date();
+        let shouldIncrementIndex = cooldown > 0;
+        let dt = (newTime - time) / 1000;
+        time = newTime;
+
+        cooldown -= dt;
+
+        if (cooldown <= 0) {
+            if (shouldIncrementIndex) {
+                textIndex++;
+            }
+
+            doMorph();
         } else {
-            scrollDownButton.style.display = 'none';
+            doCooldown();
         }
     }
 
-    // Show the scroll-down button when scrolled to the section
-    window.addEventListener('scroll', toggleScrollButton);
+    animate();
 
-    // Toggle visibility of scroll-down button when clicked
-    scrollDownButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        var scrollAmount = scrollSection.offsetTop - (window.innerHeight * 0); // Calculate scroll amount
-        window.scrollTo({
-            top: scrollAmount,
-            behavior: 'smooth'
-        });
-        scrollDownButton.style.display = 'none';
-    });
+    </script>
 
-    // Set loaded to true after a brief delay to avoid immediate scroll check
-    setTimeout(function() {
-        loaded = true;
-        toggleScrollButton();
-    }, 1000); // Adjust the delay if needed
-});
-</script>
 
-"""
+    """,height = 400)
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+st.markdown("<div style='text-align: center; margin-top: 50px;  transform: translateY(-595px) translateX(40px);'><h1 style='color:#1c3b29;'>Features</h1></div>", unsafe_allow_html=True)
 
 
 
 st.markdown("""
-<style>
-    .circle-container {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-
-    .circle {
-        width: 350px;
-        height: 400px;
-        border-radius: 10%;
-        margin: 50px;
-        margin-right: 150px;
-        background-color: white;
-        transition: transform 0.3s ease;
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .circle:hover {
-        transform: scale(1.3);
-        opacity: 1;
-    }
-</style>
+    <div class="container23">
+     <div id="section2" class="section" style=" transform: translateY(-50px); background-color:grey;"></div>
+        <div class="containercards">
+            <ul id="cards">
+                <li class="card" id="card1">
+                    <div class="card-body">
+                        <h2 style="disply:inline-block;">OGRI</h2><br>
+                        <div class="card-content">
+                            <p><br><br><br>OGRI is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="card" id="card2">
+                    <div class="card-body">
+                        <h2>16S Tree</h2>
+                        <div class="card-content">
+                            <p><br><br><br>16S Tree is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="card" id="card3">
+                    <div class="card-body">
+                        <h2>WGS Tree</h2>
+                        <div class="card-content">
+                            <p><br><br><br>WGS Tree is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="card" id="card4">
+                    <div class="card-body">
+                        <h2>.....</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 """, unsafe_allow_html=True)
 
-with st.container():
-    st.markdown(navbar1, unsafe_allow_html=True)
+st.markdown("<hr style='background-color: #3d6154; margin: 0; height: 4px; width: 100%; margin-top: 100px;'>", unsafe_allow_html=True)
 
-scroll_script = """
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var scrollDownButton = document.querySelector('.scroll-down1 a');
-    var scrollSection = document.getElementById('section2');
-    var loaded = false;
-
-    function toggleScrollButton() {
-        if (loaded && window.scrollY > scrollSection.offsetTop) {
-            scrollDownButton.style.display = 'block';
-        } else {
-            scrollDownButton.style.display = 'none';
-        }
-    }
-
-    window.addEventListener('scroll', toggleScrollButton);
-
-    scrollDownButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        var scrollAmount = scrollSection.offsetTop - (window.innerHeight * 0);
-        window.scrollTo({
-            top: scrollAmount,
-            behavior: 'smooth'
-        });
-        scrollDownButton.style.display = 'none';
-    });
-
-    setTimeout(function() {
-        loaded = true;
-        toggleScrollButton();
-    }, 1000);
-});
-</script>
-"""
-
-st.markdown(scroll_script, unsafe_allow_html=True)
-
+st.markdown("""
+<footer style='border-top: 5px solid darkgrey; text-align: center; margin-top: 20px;transform: translateY(600px);'>
+    <p style='color: #3d6154; font-size: 15px; '>© .................</p>
+</footer>
+""", unsafe_allow_html=True)
 st.markdown("""
 	<style>
 		.container1{
@@ -390,7 +487,7 @@ st.markdown("""
 			
 			}
         			[class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(-300%) translateY(150%);
+				transform: translateX(-260%) translateY(340%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
@@ -404,7 +501,7 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(285px) translateX(15px);
+                transform: translateY(1080%) translateX(15%);
                 }
 			 
                 .scroll-down1::before,
@@ -451,32 +548,36 @@ st.markdown("""
                 font-size: 1.5em;
                 letter-spacing: 4px;
                 overflow: hidden;
-                color:#1c3b29;       
-                transform: translateY(-25vh) translateX(1.5vw);
+                color:#1c3b29;          
+                top: 0rem;
+                left:3%;
+                transform: translateY(-60px);
 		    }
 
 		.logo {
             position: relative;
             width: 25vw;
-            transform: translateX(479px) translateY(-30px);
+            transform: translateX(100%) translateY(40%);
             }
         .nose {
-            position: absolute;
-            width:450px;
-            transform: translateY(-160px) translateX(-470px);
+            position: relative;
+            max-height: 300px;
+            width:25vw;
+            transform:translateX(-80%)  translateY(-50%) ;
             font-family: Sans;
             font-size: 1.2em; 
             font-weight: bold;  
             color:#1c3b29;
             }
         .container23{
-           
+            
             width: 1900px;
-            transform: translateX(-570px);
+            transform: translateX(-570px) translateY(300px);
         }
         [data-testid="stIFrame"]{
-            position: absolute;
-            transform: translateX(-60%) translateY(-180%);
+            position: relative;
+            width: 40%;
+            transform: translateX(-80%) translateY(-150%);
             z-index: 99999;
             }
         .card-content {
@@ -554,223 +655,101 @@ st.markdown("""
             }
             [class="st-emotion-cache-j6qv4b e1nzilvr4"]{
             color: white;}
+
+            [data-testid="stHeadingWithActionElements"]
+            {   
+             display: none;
+            }
+            [data-testid="stToolbar"]{
+                display: none;
+            }
+            [data-testid="stHeader"]{
+                display: none;
+            }
 		</style>
 
 
 	""",unsafe_allow_html=True)
-with st.container():	
-    st.markdown("""
-            <div id="section1" class="section">
-                    <p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
-                <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
-                <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="scroll-down">
-                    <a href="#section2"><div class="scroll-down1"></div></a>
-                </div>
-            </div>
 
-                
-
-    """, unsafe_allow_html=True )
-    col1,col2 = st.columns([1,1])
-
-    with col1:
-        st.link_button("Submit query", "http://localhost:8502")
-                    
-    with col2:	
-        st.link_button("Check status", "http://localhost:8503")			
-
-    st.markdown("<hr style='position:absolute; background-color: #3d6154; margin: 0; height: 4px; width: 1900px; opacity:0.8; transform: translateX(-568px) translateY(339px);'>", unsafe_allow_html=True)
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    components.html("""
-    <style>
-    @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
-
-
-    #container456 {
-        position: fixed;
-        width: 50%;
-        height: 40%;
-        bacground-color: grey;
-        filter: url(#threshold) blur(0px);
-        top: 30px;
-        left: 0;
-    }
-
-    #text1,
-    #text2 {
-        position: fixed;
+st.markdown("""
+<style>
+    .circle-container {
+        display: flex;
+        justify-content: space-around;
         width: 100%;
-        display: inline-block;
-        font-family: "Raleway", sans-serif;
-        font-size: 4em;
-        text-align: center;
-        color:#1c3b29;
-        user-select: none;
-    }
-    </style>
-    <div id="container456">
-        <span id="text1"></span>
-        <span id="text2"></span>
-    </div>
-
-    <svg id="filters">
-        <defs>
-            <filter id="threshold">
-                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
-                                        0 1 0 0 0
-                                        0 0 1 0 0
-                                        0 0 0 255 -140" />
-            </filter>
-        </defs>
-    </svg>
-    <script>
-    const elts = {
-        text1: document.getElementById("text1"),
-        text2: document.getElementById("text2")
-    };
-
-    const texts = [
-        "NoSE",
-        "Novel Species"
-    ];
-
-    const morphTime = 10;
-    const cooldownTime = 5;
-
-    let textIndex = texts.length - 1;
-    let time = new Date();
-    let morph = 10;
-    let cooldown = cooldownTime;
-
-    elts.text1.textContent = texts[textIndex % texts.length];
-    elts.text2.textContent = texts[(textIndex + 1) % texts.length];
-
-    function doMorph() {
-        morph -= cooldown;
-        cooldown = 0;
-
-        let fraction = morph / morphTime;
-
-        if (fraction > 1) {
-            cooldown = cooldownTime;
-            fraction = 1;
-        }
-
-        setMorph(fraction);
     }
 
-    function setMorph(fraction) {
-        elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-        elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
-
-        fraction = 1 - fraction;
-        elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-        elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
-
-        elts.text1.textContent = texts[textIndex % texts.length];
-        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+    .circle {
+        width: 350px;
+        height: 400px;
+        border-radius: 10%;
+        margin: 50px;
+        margin-right: 150px;
+        background-color: white;
+        transition: transform 0.3s ease;
+        position: relative;
+        margin-bottom: 20px;
     }
 
-    function doCooldown() {
-        morph = 0;
-
-        elts.text2.style.filter = "";
-        elts.text2.style.opacity = "100%";
-
-        elts.text1.style.filter = "";
-        elts.text1.style.opacity = "0%";
+    .circle:hover {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+</style>
+""", unsafe_allow_html=True)
+st.markdown("""
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+""", unsafe_allow_html=True)
+st.markdown("""
+<style>
+    [data-testid="stAppViewContainer"] {
+        background-color: white;
+            scroll-behavior: smooth;
     }
 
-    function animate() {
-        requestAnimationFrame(animate);
+    [class="st-emotion-cache-r421ms e1f1d6gn0"]{
+        background-color: white;
+    }
 
-        let newTime = new Date();
-        let shouldIncrementIndex = cooldown > 0;
-        let dt = (newTime - time) / 1000;
-        time = newTime;
+    body, html {
+        overflow-x:hidden;
+    }
+</style>
+""", unsafe_allow_html=True)
 
-        cooldown -= dt;
+scroll_script = """
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var scrollDownButton = document.querySelector('.scroll-down1 a');
+    var scrollSection = document.getElementById('section2');
+    var loaded = false;
 
-        if (cooldown <= 0) {
-            if (shouldIncrementIndex) {
-                textIndex++;
-            }
-
-            doMorph();
+    function toggleScrollButton() {
+        if (loaded && window.scrollY > scrollSection.offsetTop) {
+            scrollDownButton.style.display = 'block';
         } else {
-            doCooldown();
+            scrollDownButton.style.display = 'none';
         }
     }
 
-    animate();
+    window.addEventListener('scroll', toggleScrollButton);
 
-    </script>
+    scrollDownButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        var scrollAmount = scrollSection.offsetTop - (window.innerHeight * 0);
+        window.scrollTo({
+            top: scrollAmount,
+            behavior: 'smooth'
+        });
+        scrollDownButton.style.display = 'none';
+    });
 
+    setTimeout(function() {
+        loaded = true;
+        toggleScrollButton();
+    }, 1000);
+});
+</script>
+"""
 
-    """,height = 400)
-st.markdown("<div style='text-align: center; margin-top: 50px;  transform: translateY(95px) translateX(40px);'><h1 style='color:#1c3b29;'>Features</h1></div>", unsafe_allow_html=True)
-
-
-
-st.markdown("""
-    <div class="container23">
-     <div id="section2" class="section" style=" transform: translateY(-50px); background-color:grey;"></div>
-        <div class="containercards">
-            <ul id="cards">
-                <li class="card" id="card1">
-                    <div class="card-body">
-                        <h2 style="disply:inline-block;">OGRI</h2><br>
-                        <div class="card-content">
-                            <p><br><br><br>OGRI is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="card" id="card2">
-                    <div class="card-body">
-                        <h2>16S Tree</h2>
-                        <div class="card-content">
-                            <p><br><br><br>16S Tree is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="card" id="card3">
-                    <div class="card-body">
-                        <h2>WGS Tree</h2>
-                        <div class="card-content">
-                            <p><br><br><br>WGS Tree is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="card" id="card4">
-                    <div class="card-body">
-                        <h2>.....</h2>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
-
-st.markdown("<hr style='background-color: #3d6154; margin: 0; height: 4px; width: 100%; margin-top: 100px;'>", unsafe_allow_html=True)
-
-st.markdown("""
-<footer style='border-top: 5px solid darkgrey; text-align: center; margin-top: 20px;transform: translateY(600px);'>
-    <p style='color: #3d6154; font-size: 15px; '>© .................</p>
-</footer>
-""", unsafe_allow_html=True)
+st.markdown(scroll_script, unsafe_allow_html=True)
