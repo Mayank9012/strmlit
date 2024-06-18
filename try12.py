@@ -1,6 +1,7 @@
 import time
 import streamlit as st
 import streamlit.components.v1 as components
+import webbrowser
 
 st.write("#")
 #confirmation dialog
@@ -270,7 +271,10 @@ with st.container():
     col1,col2 = st.columns([1,1])
 
     with col1:
-        st.link_button("Submit query", "http://localhost:8502")
+        butn1= st.button("Submit Query")
+        if butn1:
+            url=f'http://localhost:8501/'
+            webbrowser.open_new_tab(url)
                     
     with col2:	
         butn= st.button("Check status")
@@ -614,6 +618,7 @@ st.markdown("""
             }
             [class="st-emotion-cache-otc82o e16zdaao0"]{
                 margin-top:10px;
+            display:inline-block;
 				transform: translateX(60%) translateY(-473%);
 				width: 135px;
 				height:35px;
@@ -622,7 +627,7 @@ st.markdown("""
 			}
           
             [data-testid="baseButton-secondary"]{
-            
+                display:inline-block;
                 transform: translateX(60%) translateY(-473%);
 				width: 135px;
 				height:35px;
