@@ -609,7 +609,7 @@ st.markdown("""
             .logo {
                 position: relative;
             width: 200px;
-            transform: translateX(30%) translateY(0%);
+            transform: translateX(30%) translateY(-25%);
             }
             .nose {
             position: relative;
@@ -623,6 +623,7 @@ st.markdown("""
             text-align:center;
             }
             [class="st-emotion-cache-otc82o e16zdaao0"]{
+                margin-top:10px;
 				transform: translateX(50%) translateY(640%);
 				width: 150px;
 				height:35px;
@@ -631,6 +632,7 @@ st.markdown("""
 			}
           
             [data-testid="baseButton-secondary"]{
+            margin-top:10px;
                 transform: translateX(50%) translateY(720%);
 				width: 150px;
 				height:35px;
@@ -642,7 +644,7 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 100%;
-                transform: translateX(0%) translateY(-115%);
+                transform: translateX(0%) translateY(-120%);
             }
             .scroll-down {
 				position: absolute;
