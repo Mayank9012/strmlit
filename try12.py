@@ -281,7 +281,8 @@ with st.container():
         st.link_button("Submit query", "http://localhost:8502")
                     
     with col2:	
-        if st.button("Check status"): 
+        butn= st.button("Check status")
+        if butn:
             pop()
 
 
