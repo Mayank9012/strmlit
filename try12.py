@@ -3,6 +3,31 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.write("#")
+#confirmation dialog
+@st.experimental_dialog("Check Status")
+def pop():
+    task_id = st.text_input("Enter the task id")
+    st.markdown("""
+                <style>
+                .btn {
+                    background-color: #1c3b29;
+                    border: #3d6154;
+                    color: white;
+                    padding: 10px 24px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 12px;
+                }
+                </style>
+
+    <a href="#?task_id={task_id}" class="btn1">
+    <button type="button" class="btn" >Check Status</button></a>
+                
+                """, unsafe_allow_html=True)
 
 
 navbar1 = """
@@ -57,10 +82,10 @@ navbar1 = """
 
     <nav class="navigation">
     <ul class="nav-list">
-        <li class="nav-item" ><a href="#" class="nav-link" style = 'color: #1c3b29; font-weight:bold; font-size:0.9em;'>Home </a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:0.9em; justify-content: center;" >|</li>
-        <li class="nav-item"><a href="#" class="nav-link" style = 'color:#1c3b29; font-weight:bold; font-size:0.9em;'>About</a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:0.9em; justify-content: center;"  >|</li>
+        <li class="nav-item" ><a href="#" class="nav-link" style = 'color: #1c3b29; font-weight:bold; font-size:1em;'>Home </a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:1em; justify-content: center;" >|</li>
+        <li class="nav-item"><a href="#" class="nav-link" style = 'color:#1c3b29; font-weight:bold; font-size:1em;'>About</a></li><li class="nav-item" style="color:#034620; font-weight:bold; font-size:1em; justify-content: center;"  >|</li>
         <li class="nav-item dropdown">
-        	<a href="#" class="nav-link dropbtn" style = 'color: #1c3b29; font-weight:bold; font-size:0.9em;'>Help</a>
+        	<a href="#" class="nav-link dropbtn" style = 'color: #1c3b29; font-weight:bold; font-size:1em;'>Help</a>
         </li>
     </ul>
     </nav>
@@ -107,14 +132,14 @@ with st.container():
 
 with st.container():	
     st.markdown("""
-            <div id="section1" class="section">
+            <div id="section1" class="section"></div>
                     <p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
                 <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
                 <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <div class="scroll-down">
                     <a href="#section2"><div class="scroll-down1"></div></a>
                 </div>
-            </div>
+            
 
                 
 
@@ -125,9 +150,30 @@ with st.container():
         st.link_button("Submit query", "http://localhost:8502")
                     
     with col2:	
-        st.link_button("Check status", "http://localhost:8503")			
+        if st.button("Check status"): 
+            pop()
 
-    st.markdown("<hr style='position:absolute; background-color: #3d6154; margin: 0; height: 4px; width: 1900px; opacity:0.6; transform: translateX(-568px) translateY(480px);'>", unsafe_allow_html=True)
+
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+
+
 
     components.html("""
     <style>
@@ -257,43 +303,19 @@ with st.container():
 
 
     """,height = 400)
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-st.markdown("<div style='text-align: center; margin-top: 50px;  transform: translateY(-595px) translateX(40px);'><h1 style='color:#1c3b29;'>Features</h1></div>", unsafe_allow_html=True)
 
+st.markdown("""
+     <div id="section2" class="section"></div>
+""", unsafe_allow_html=True)
 
 
 st.markdown("""
-    <div class="container23">
-     <div id="section2" class="section" style=" transform: translateY(-50px); background-color:grey;"></div>
-        <div class="containercards">
+
+             <div class="containercards">
             <ul id="cards">
                 <li class="card" id="card1">
                     <div class="card-body">
-                        <h2 style="disply:inline-block;">OGRI</h2><br>
+                        <p style="font-size:2.5em; font-weight: bold; top:0;">OGRI</p><br>
                         <div class="card-content">
                             <p><br><br><br>OGRI is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
                         </div>
@@ -301,7 +323,7 @@ st.markdown("""
                 </li>
                 <li class="card" id="card2">
                     <div class="card-body">
-                        <h2>16S Tree</h2>
+                        <p style="font-size:2.5em; font-weight: bold; top:0;">16S Tree</p>
                         <div class="card-content">
                             <p><br><br><br>16S Tree is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
                         </div>
@@ -309,7 +331,7 @@ st.markdown("""
                 </li>
                 <li class="card" id="card3">
                     <div class="card-body">
-                        <h2>WGS Tree</h2>
+                        <p style="font-size:2.5em; font-weight: bold; top:0;">WGS Tree</p>
                         <div class="card-content">
                             <p><br><br><br>WGS Tree is a tool to predict the novel species from the given 16S rRNA gene sequences.</p>
                         </div>
@@ -317,67 +339,32 @@ st.markdown("""
                 </li>
                 <li class="card" id="card4">
                     <div class="card-body">
-                        <h2>.....</h2>
+                        <p style="font-size:2.5em; font-weight: bold; top: 0;">.....</p>
                     </div>
                 </li>
             </ul>
         </div>
-    </div>
+
 """, unsafe_allow_html=True)
 
 st.markdown("<hr style='background-color: #3d6154; margin: 0; height: 4px; width: 100%; margin-top: 100px;'>", unsafe_allow_html=True)
 
+
 st.markdown("""
-<footer style='border-top: 5px solid darkgrey; text-align: center; margin-top: 20px;transform: translateY(600px);'>
-    <p style='color: #3d6154; font-size: 15px; '>© .................</p>
+<footer style='border-top: 5px solid darkgrey; text-align: center; margin-top: 20px;transform: translateX(-577px) translateY(600px); width:100vw;'>
+    <p style='color: #3d6154; font-size: 15px; '>© .................</p> 
 </footer>
 """, unsafe_allow_html=True)
 st.markdown("""
 	<style>
-		.container1{
-           transform: translateY(-290px) translateX(-560px);
-			background-color: white;
-            width: 1900px;
-            height: 100vh;
-            display: flex;
-            position: relative;
-            justify-content: left;
-            align-items: left;
-            text-align: left;
-           
-		}
-		.circle-container {
-            display: flex;
-			width: 100%;
-			transform: translateX(50px) translateY(1070px);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 170vh; /* Adjusted height for demonstration */
-            position: absolute;
-			 overflow-y: hidden;
-            }
-
-        .circle {
-            width: 350px;
-            height: 400px;
-            border-radius: 10%;
-			 margin:50px;
-			 margin-right: 150px;
-            background-color: white; /* Change the color as needed */
-			transition: transform 0.3s ease;
-			position: relative;
-            
-            margin-bottom: 20px;
-
-        }
-			
+		
         [class="element-container st-emotion-cache-1aege4m e1f1d6gn4"]{
+
 
         }
 			
       
-		button[title="View fullscreen"]{
+	button[title="View fullscreen"]{
             visibility: hidden;
         }
         :root {
@@ -390,14 +377,14 @@ st.markdown("""
         .containercards {
             width: 50%;
             height: 100%;
-            transform: translateY(200px) translateX(30px);
+            transform: translateX(-10%);
 
         }
 
         #cards {
             list-style: none;
             padding-left: 20px;
-            transform: translateY(0px) translateX(525px);
+
             display: grid;
             width:700px;
             
@@ -424,7 +411,7 @@ st.markdown("""
 
         .card {
             position: sticky;
-            top: 50px;
+            top: 250px;
             padding-top: calc(var(--index) * var(--cardTopPadding));
 
         }
@@ -462,19 +449,20 @@ st.markdown("""
         }
 
         h2 {
+            position: relative;
             font-size: 2.5em;
             color: white;
         }
 			body, html {
-				background-color: #e0ece9;
+				
 				height: 100%;
 				scroll-behavior: smooth; /* Add smooth scrolling behavior */
                 overflow: hidden;
 			}
 			.section {
 				width: 100%;
-				position: 
 				display: flex;
+				flex-direction: columm;
 				justify-content: center;
 				align-items: center;
 				text-align: center;
@@ -493,7 +481,19 @@ st.markdown("""
 				border: 2px solid #3d6154;
                 position:absolute;
 			}
-			 .scroll-down1 {
+          
+            [data-testid="baseButton-secondary"]{
+            transform: translateX(-260%) translateY(150%);
+				width: 170px;
+				height:45px;
+				border: 2px solid #3d6154;
+                background-color: #1c3b29;
+                position:absolute;
+            }
+            button{
+            
+            }
+	.scroll-down1 {
                 height: 40px;
                 width: 25px;
                 border: 2px solid #1c3b29;
@@ -501,7 +501,8 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(1080%) translateX(15%);
+                transform: translateY(700%) translateX(15%);
+                
                 }
 			 
                 .scroll-down1::before,
@@ -543,6 +544,7 @@ st.markdown("""
                 }
              #welcomeText{
                 position: relative;
+                
                 font-family: Ubuntu;
                 font-weight:bold;
                 font-size: 1.5em;
@@ -550,14 +552,14 @@ st.markdown("""
                 overflow: hidden;
                 color:#1c3b29;          
                 top: 0rem;
-                left:3%;
+                left:41%;
                 transform: translateY(-60px);
 		    }
 
 	.logo {
             position: relative;
             width: 25vw;
-            transform: translateX(100%) translateY(50%);
+            transform: translateX(140%) translateY(50%);
             }
         .nose {
             position: relative;
@@ -568,16 +570,17 @@ st.markdown("""
             font-size: 1.2em; 
             font-weight: bold;  
             color:#1c3b29;
+            text-align:center;
             }
         .container23{
+            position:relative;
             
-            width: 1900px;
-            transform: translateX(-570px) translateY(300px);
+            transform: translateX(-570px) translateY(0px);
         }
         [data-testid="stIFrame"]{
             position: relative;
             width: 40%;
-            transform: translateX(-115%) translateY(-115%);
+            transform: translateX(-115%) translateY(-185%);
  
             }
         .card-content {
@@ -590,7 +593,7 @@ st.markdown("""
             margin: 0px;
             font-family: Ubuntu;
             width:650px;
-            height: 540px;
+            height: 440px;
             overflow: hidden;
             text-align: center;
             }
@@ -753,3 +756,4 @@ document.addEventListener('DOMContentLoaded', function() {
 """
 
 st.markdown(scroll_script, unsafe_allow_html=True)
+
