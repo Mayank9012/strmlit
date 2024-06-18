@@ -624,16 +624,16 @@ st.markdown("""
             }
             [class="st-emotion-cache-otc82o e16zdaao0"]{
                 margin-top:10px;
-				transform: translateX(-10%) translateY(680%);
+				transform: translateX(50%) translateY(933%);
 				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
-                position:absolute;
+                position:relative;
 			}
           
             [data-testid="baseButton-secondary"]{
             
-                transform: translateX(130%) translateY(663%);
+                transform: translateX(50%) translateY(633%);
 				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
