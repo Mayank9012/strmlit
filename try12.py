@@ -144,34 +144,6 @@ with st.container():
                 
 
     """, unsafe_allow_html=True )
-    col1,col2 = st.columns([1,1])
-
-    with col1:
-        st.link_button("Submit query", "http://localhost:8502")
-                    
-    with col2:	
-        if st.button("Check status"): 
-            pop()
-
-
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
 
 
 
@@ -303,6 +275,30 @@ with st.container():
 
 
     """,height = 400)
+    col1,col2 = st.columns([1,1])
+
+    with col1:
+        st.link_button("Submit query", "http://localhost:8502")
+                    
+    with col2:	
+        if st.button("Check status"): 
+            pop()
+
+
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
 
 st.markdown("""
      <div id="section2" class="section"></div>
@@ -615,7 +611,7 @@ st.markdown("""
             position: relative;
             max-height: 200px;
             width:75vw;
-            transform:translateX(-1%)  translateY(190%) ;
+            transform:translateX(-1%)  translateY(170%) ;
             font-family: Sans;
             font-size: 1em; 
             font-weight: bold;  
@@ -624,7 +620,7 @@ st.markdown("""
             }
             [class="st-emotion-cache-otc82o e16zdaao0"]{
                 margin-top:10px;
-				transform: translateX(50%) translateY(933%);
+				transform: translateX(60%) translateY(-473%);
 				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
@@ -633,7 +629,7 @@ st.markdown("""
           
             [data-testid="baseButton-secondary"]{
             
-                transform: translateX(50%) translateY(633%);
+                transform: translateX(60%) translateY(-473%);
 				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
@@ -644,7 +640,7 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 100%;
-                transform: translateX(0%) translateY(-120%);
+                transform: translateX(0%) translateY(-38%);
             }
             .scroll-down {
 				position: absolute;
