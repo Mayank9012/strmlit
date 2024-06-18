@@ -476,7 +476,7 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(-550%) translateX(15%);
+                transform: translateY(-490%) translateX(15%);
                 
                 }
 			 
