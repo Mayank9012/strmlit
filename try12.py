@@ -197,7 +197,7 @@ with st.container():
         width: 100%;
         display: inline-block;
         font-family: "Raleway", sans-serif;
-        font-size: 20vw;
+        font-size: 4em;
         text-align: center;
         color:#1c3b29;
         user-select: none;
@@ -384,10 +384,8 @@ st.markdown("""
         #cards {
             list-style: none;
             padding-left: 20px;
-
             display: grid;
-            width:700px;
-            
+            width:700px;            
             grid-template-columns: 1fr;
             grid-template-rows: repeat(var(--cards), var(--cardHeight));
             gap: var(--cardMargin);
@@ -456,7 +454,7 @@ st.markdown("""
 			body, html {
 				
 				height: 100%;
-				scroll-behavior: smooth; /* Add smooth scrolling behavior */
+				scroll-behavior: smooth;
                 overflow: hidden;
 			}
 			.section {
@@ -490,9 +488,7 @@ st.markdown("""
                 background-color: #1c3b29;
                 position:absolute;
             }
-            button{
             
-            }
 	.scroll-down1 {
                 height: 40px;
                 width: 25px;
@@ -543,8 +539,7 @@ st.markdown("""
                 }
                 }
              #welcomeText{
-                position: relative;
-                
+                position: relative;                
                 font-family: Ubuntu;
                 font-weight:bold;
                 font-size: 1.5em;
@@ -555,8 +550,7 @@ st.markdown("""
                 left:41%;
                 transform: translateY(-60px);
 		    }
-
-	.logo {
+        .logo {
             position: relative;
             width: 25vw;
             transform: translateX(140%) translateY(50%);
@@ -598,55 +592,84 @@ st.markdown("""
             text-align: center;
             }
 
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 490px) {
              #welcomeText{
-                position: absolute;
+                position: relative;               
                 font-family: Ubuntu;
                 font-weight:bold;
-                font-size: 1.5em;
+                font-size: 1.2em;
                 letter-spacing: 4px;
                 overflow: hidden;
-                color:white;       
-                transform: translateY(-40px) translateX(-70%);
-                top: 160px;
+                color:#1c3b29;          
+                top: 0rem;
+                left: 30%;
+                transform: translateY(-90px);
 		    }
-            .logoclass {
-            position: absolute;
-            }
+          
             .logo {
-                position: fixed;
-                width: 250px; 
-                margin: 20px;
-                padding: 20px;
-                transform: translateX(360px);
+                position: relative;
+            width: 200px;
+            transform: translateX(30%) translateY(0%);
             }
             .nose {
-                position: absolute;
-                transform: translateY(50%) translateX(-60%);
-                -webkit-text-stroke: 1px #000; 
-                font-family: Calibri ; font-size: 45px; font-weight: bold;  color:#ffffff;
+            position: relative;
+            max-height: 200px;
+            width:75vw;
+            transform:translateX(-1%)  translateY(190%) ;
+            font-family: Sans;
+            font-size: 1em; 
+            font-weight: bold;  
+            color:#1c3b29;
+            text-align:center;
             }
             [class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(70%) translateY(-495px);
-				width: 120px;
-				height:25px;
+				transform: translateX(50%) translateY(640%);
+				width: 150px;
+				height:35px;
 				border: 2px solid #3d6154;
-                position: relative;
+                position:absolute;
 			}
+          
+            [data-testid="baseButton-secondary"]{
+                transform: translateX(50%) translateY(720%);
+				width: 150px;
+				height:35px;
+				border: 2px solid #3d6154;
+                background-color: #1c3b29;
+                position:absolute;
+            }
+        
+            [data-testid="stIFrame"]{
+                position: relative;
+                width: 100%;
+                transform: translateX(0%) translateY(-115%);
+            }
             .scroll-down {
 				position: absolute;
 				bottom: 20px;
-			    transform: transalteX(-650px) translateY(-20px) ;
 			}
             .scroll-down1 {
-                height: 40px;
-                width: 25px;
-                border: 2px solid white;                
-            	position: absolute;
-                border-radius: 20px;
-                cursor: pointer;
-                transform: transalteX(-650px) translateY(-20px) ;
+               display: none;
                 }
+            
+            .containercards {
+                width: 100%;
+                transform: translateX(-18%) translateY(-15%);
+            }
+            #cards {
+                width: 300px;
+            }
+            .card-content {
+                font-size: 1em;
+                width: 250px;
+                height: 200px;
+            }
+            .card{
+                    position: sticky;
+            top: 550px;
+            padding-top: calc(var(--index) * var(--cardTopPadding));
+            }
+
 
             }
             [data-testid="baseLinkButton-secondary"]{
@@ -656,6 +679,7 @@ st.markdown("""
                 font-weight: bold;
                
             }
+            
             [class="st-emotion-cache-j6qv4b e1nzilvr4"]{
             color: white;}
 
@@ -668,6 +692,184 @@ st.markdown("""
             }
             [data-testid="stHeader"]{
                 display: none;
+            }
+
+            
+
+    @media screen  and (min-width: 1135px) and (max-width: 1630px){
+            #welcomeText{
+                position: relative;                
+                font-family: Ubuntu;
+                font-weight:bold;
+                font-size: 1.5em;
+                letter-spacing: 4px;
+                overflow: hidden;
+                color:#1c3b29;          
+                top: 0rem;
+                left:41%;
+                transform: translateY(-60px);
+		    }
+          
+       .logo {
+            position: relative;
+            width: 25em;
+            transform: translateX(140%) translateY(50%);
+            right: 20%;
+            }
+        .nose {
+            position: relative;
+            max-height: 300px;
+            width:30vw;
+            margin-top:30px;
+            transform:translateX(-88%)  translateY(-30%) ;
+            font-family: Sans;
+            font-size: 1.2em; 
+            font-weight: bold;  
+            color:#1c3b29;
+            text-align:center;
+            left:30%;
+            }
+        [class="st-emotion-cache-otc82o e16zdaao0"]{
+				transform: translateX(-120%) translateY(150%);
+				width: 170px;
+				height:45px;
+				border: 2px solid #3d6154;
+                position:relative;
+                
+			}
+          
+            [data-testid="baseButton-secondary"]{
+            transform: translateX(-120%) translateY(150%);
+				width: 170px;
+				height:45px;
+				border: 2px solid #3d6154;
+                background-color: #1c3b29;
+                position:relative;
+            }
+            
+	.scroll-down1 {
+                height: 40px;
+                width: 25px;
+                border: 2px solid #1c3b29;
+                left: 50%;
+            	position: absolute;
+                border-radius: 20px;
+                cursor: pointer;
+                transform: translateY(700%) translateX(15%);
+                
+                }
+			 
+           
+            [data-testid="stIFrame"]{
+                position: sticky;
+                width: 40%;
+                transform: translateX(-75%) translateY(-195%);
+                margin-left:18%;
+            }
+            
+            
+            .containercards {
+                width: 100%;
+                transform: translateX(-2%);
+            }
+            #cards {
+                width: 60vw;
+            }
+            .card-content {
+                font-size: 1em;
+                width: 50vw;
+                height: 200px;
+            }
+
+
+            }
+
+    @media screen  and (min-width: 491px) and (max-width: 1134px){
+            #welcomeText{
+                position: relative;                
+                font-family: Ubuntu;
+                font-weight:bold;
+                font-size: 1.5em;
+                letter-spacing: 4px;
+                overflow: hidden;
+                color:#1c3b29;          
+                top: 0rem;
+                left:41%;
+                transform: translateY(-60px);
+		    }
+          
+       .logo {
+            position: relative;
+            width: 15em;
+            transform: translateX(180%) translateY(50%);
+            right: 20%;
+            }
+        .nose {
+            position: relative;
+            max-height: 300px;
+            width:30vw;
+            margin-top:30px;
+            transform:translateX(-88%)  translateY(-30%) ;
+            font-family: Sans;
+            font-size: 1.2em; 
+            font-weight: bold;  
+            color:#1c3b29;
+            text-align:center;
+            left:30%;
+            }
+        [class="st-emotion-cache-otc82o e16zdaao0"]{
+				transform: translateX(-120%) translateY(150%);
+				width: 170px;
+				height:45px;
+				border: 2px solid #3d6154;
+                position:relative;
+                
+			}
+          
+            [data-testid="baseButton-secondary"]{
+            transform: translateX(-120%) translateY(150%);
+				width: 170px;
+				height:45px;
+				border: 2px solid #3d6154;
+                background-color: #1c3b29;
+                position:relative;
+            }
+            
+	.scroll-down1 {
+                height: 40px;
+                width: 25px;
+                border: 2px solid #1c3b29;
+                left: 50%;
+            	position: absolute;
+                border-radius: 20px;
+                cursor: pointer;
+                transform: translateY(700%) translateX(15%);
+                
+                }
+			 
+           
+            [data-testid="stIFrame"]{
+                position: sticky;
+                width: 40%;
+                transform: translateX(-75%) translateY(-195%);
+                margin-left:18%;
+            }
+            
+            
+            .containercards {
+                width: 100%;
+                transform: translateX(-2%);
+            }
+            #cards {
+                width: 60vw;
+            }
+            .card-content {
+                font-size: 1em;
+                width: 50vw;
+                height: 200px;
+            }
+
+
             }
 		</style>
 
