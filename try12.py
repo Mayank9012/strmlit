@@ -624,17 +624,17 @@ st.markdown("""
             }
             [class="st-emotion-cache-otc82o e16zdaao0"]{
                 margin-top:10px;
-				transform: translateX(50%) translateY(640%);
-				width: 150px;
+				transform: translateX(-10%) translateY(680%);
+				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
                 position:absolute;
 			}
           
             [data-testid="baseButton-secondary"]{
-            margin-top:10px;
-                transform: translateX(50%) translateY(720%);
-				width: 150px;
+            
+                transform: translateX(130%) translateY(663%);
+				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
                 background-color: #1c3b29;
