@@ -162,7 +162,7 @@ with st.container():
         width: 100%;
         display: inline-block;
         font-family: "Raleway", sans-serif;
-        font-size: 4em;
+        font-size: 3em;
         text-align: center;
         color:#1c3b29;
         user-select: none;
@@ -268,7 +268,7 @@ with st.container():
 
 
     """,height = 400)
-    col1,col2 = st.columns([1,1])
+    col1,col2,col3 = st.columns([1,1,1])
 
     with col1:
         butn1= st.button("Submit Query")
@@ -287,20 +287,7 @@ with st.container():
                 </div>
 """, unsafe_allow_html=True)
 
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
+
 
 st.markdown("""
      <div id="section2" class="section"></div>
@@ -470,16 +457,10 @@ st.markdown("""
 				left: 50%;
 			
 			}
-        			[class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(-260%) translateY(-900%);
-				width: 170px;
-				height:45px;
-				border: 2px solid #3d6154;
-                position:relative;
-			}
+
           
             [data-testid="baseButton-secondary"]{
-            transform: translateX(-260%) translateY(-900%);
+            transform: translateX(-225%) translateY(-900%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
@@ -574,8 +555,7 @@ st.markdown("""
         .card-content {
             font-size: 1.2em;
             display: flex;
-            background-color: white;
-            color: #1c3b29;
+            color: white;
             padding: 10px;
             border-radius: 100px 100px 50px 50px;
             margin: 0px;
@@ -603,29 +583,20 @@ st.markdown("""
             .logo {
                 position: relative;
             width: 200px;
-            transform: translateX(30%) translateY(-25%);
+            transform: translateX(45%) translateY(-25%);
             }
             .nose {
             position: relative;
             max-height: 200px;
             width:75vw;
-            transform:translateX(-1%)  translateY(170%) ;
+            transform:translateX(1%)  translateY(170%) ;
             font-family: Sans;
             font-size: 1em; 
             font-weight: bold;  
             color:#1c3b29;
             text-align:center;
             }
-            [class="st-emotion-cache-otc82o e16zdaao0"]{
-                margin-top:10px;
-            display:inline-block;
-				transform: translateX(60%) translateY(-473%);
-				width: 135px;
-				height:35px;
-				border: 2px solid #3d6154;
-                position:relative;
-			}
-          
+
             [data-testid="baseButton-secondary"]{
                 display:inline-block;
                 transform: translateX(60%) translateY(-473%);
@@ -634,12 +605,13 @@ st.markdown("""
 				border: 2px solid #3d6154;
                 background-color: #1c3b29;
                 position:absolute;
+                margin:5%;
             }
         
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 100%;
-                transform: translateX(0%) translateY(-38%);
+                transform: translateX(9%) translateY(-38%);
             }
             .scroll-down {
 				position: absolute;
@@ -651,7 +623,7 @@ st.markdown("""
             
             .containercards {
                 width: 50%;
-                transform: translateX(-35%) translateY(-15%);
+                transform: translateX(-20%) translateY(0%);
             }
             #cards {
                 width: 300px;
@@ -663,7 +635,7 @@ st.markdown("""
             }
             .card{
                     position: sticky;
-            top: 550px;
+            top: 150px;
             padding-top: calc(var(--index) * var(--cardTopPadding));
             }
 
@@ -711,32 +683,24 @@ st.markdown("""
             position: relative;
             width: 25em;
             transform: translateX(140%) translateY(50%);
-            right: 20%;
+            
             }
         .nose {
             position: relative;
             max-height: 300px;
-            width:30vw;
+            width:450px;
             margin-top:30px;
-            transform:translateX(-88%)  translateY(-30%) ;
+            transform:translateX(-80%)  translateY(-30%) ;
             font-family: Sans;
-            font-size: 1.2em; 
+            font-size: 1em; 
             font-weight: bold;  
             color:#1c3b29;
             text-align:center;
-            left:30%;
+            left:28%;
             }
-        [class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(-120%) translateY(150%);
-				width: 170px;
-				height:45px;
-				border: 2px solid #3d6154;
-                position:relative;
-                
-			}
-          
+
             [data-testid="baseButton-secondary"]{
-            transform: translateX(-120%) translateY(150%);
+            transform: translateX(-88%) translateY(-850%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
@@ -752,7 +716,7 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(700%) translateX(15%);
+                transform: translateY(-600%) translateX(15%);
                 
                 }
 			 
@@ -760,7 +724,7 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: sticky;
                 width: 40%;
-                transform: translateX(-75%) translateY(-195%);
+                transform: translateX(-75%) translateY(-80%);
                 margin-left:18%;
             }
             
@@ -797,39 +761,32 @@ st.markdown("""
           
        .logo {
             position: relative;
-            width: 15em;
+            width: 25vw;
             transform: translateX(180%) translateY(50%);
-            right: 20%;
+            left: 25%;
             }
         .nose {
             position: relative;
             max-height: 300px;
             width:30vw;
             margin-top:30px;
-            transform:translateX(-88%)  translateY(-30%) ;
+            transform:translateX(-83%)  translateY(30%) ;
             font-family: Sans;
-            font-size: 1.2em; 
+            font-size: 0.9em; 
             font-weight: bold;  
             color:#1c3b29;
             text-align:center;
             left:30%;
             }
-        [class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(-120%) translateY(150%);
-				width: 170px;
-				height:45px;
-				border: 2px solid #3d6154;
-                position:relative;
-                
-			}
           
             [data-testid="baseButton-secondary"]{
-            transform: translateX(-120%) translateY(150%);
-				width: 170px;
-				height:45px;
+            transform: translateX(-60%) translateY(-850%);
+				width: 150px;
+				height:38px;
 				border: 2px solid #3d6154;
                 background-color: #1c3b29;
                 position:relative;
+            margin-left: 20%;
             }
             
 	.scroll-down1 {
@@ -840,7 +797,7 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(700%) translateX(15%);
+                transform: translateY(-600%) translateX(15%);
                 
                 }
 			 
@@ -848,8 +805,9 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: sticky;
                 width: 40%;
-                transform: translateX(-75%) translateY(-195%);
-                margin-left:18%;
+                transform: translateX(-70%) translateY(-70%);
+             
+            left: 30%;
             }
             
             
