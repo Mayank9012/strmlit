@@ -136,16 +136,8 @@ with st.container():
                     <p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
                 <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
                 <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="scroll-down">
-                    <a href="#section2"><div class="scroll-down1"></div></a>
-                </div>
-            
-
-                
 
     """, unsafe_allow_html=True )
-
-
 
     components.html("""
     <style>
@@ -285,6 +277,11 @@ with st.container():
         if butn:
             pop()
 
+    st.markdown("""
+ <div class="scroll-down">
+                    <a href="#section2"><div class="scroll-down1"></div></a>
+                </div>
+""", unsafe_allow_html=True)
 
     st.write("")
     st.write("")
@@ -470,20 +467,20 @@ st.markdown("""
 			
 			}
         			[class="st-emotion-cache-otc82o e16zdaao0"]{
-				transform: translateX(-260%) translateY(150%);
+				transform: translateX(-260%) translateY(-900%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
-                position:absolute;
+                position:relative;
 			}
           
             [data-testid="baseButton-secondary"]{
-            transform: translateX(-260%) translateY(150%);
+            transform: translateX(-260%) translateY(-900%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
                 background-color: #1c3b29;
-                position:absolute;
+                position:relative;
             }
             
 	.scroll-down1 {
@@ -494,7 +491,7 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(700%) translateX(15%);
+                transform: translateY(-550%) translateX(15%);
                 
                 }
 			 
@@ -563,15 +560,11 @@ st.markdown("""
             color:#1c3b29;
             text-align:center;
             }
-        .container23{
-            position:relative;
-            
-            transform: translateX(-570px) translateY(0px);
-        }
+
         [data-testid="stIFrame"]{
             position: relative;
             width: 40%;
-            transform: translateX(-115%) translateY(-185%);
+            transform: translateX(-115%) translateY(-115%);
  
             }
         .card-content {
@@ -652,8 +645,8 @@ st.markdown("""
                 }
             
             .containercards {
-                width: 100%;
-                transform: translateX(-18%) translateY(-15%);
+                width: 50%;
+                transform: translateX(-35%) translateY(-15%);
             }
             #cards {
                 width: 300px;
