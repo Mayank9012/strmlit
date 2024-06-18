@@ -583,23 +583,26 @@ st.markdown("""
             .logo {
                 position: relative;
             width: 200px;
-            transform: translateX(45%) translateY(-25%);
+            transform: translateX(35%) translateY(-25%);
             }
             .nose {
             position: relative;
             max-height: 200px;
             width:75vw;
-            transform:translateX(1%)  translateY(170%) ;
+            transform:translateX(-1%)  translateY(160%) ;
             font-family: Sans;
             font-size: 1em; 
             font-weight: bold;  
             color:#1c3b29;
             text-align:center;
             }
+            [data-testid="stButton"]{
+                margin:10%;
+            }
 
             [data-testid="baseButton-secondary"]{
                 display:inline-block;
-                transform: translateX(60%) translateY(-473%);
+                transform: translateX(35%) translateY(-473%);
 				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
@@ -611,7 +614,7 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 100%;
-                transform: translateX(9%) translateY(-38%);
+                transform: translateX(3%) translateY(-38%);
             }
             .scroll-down {
 				position: absolute;
@@ -623,7 +626,7 @@ st.markdown("""
             
             .containercards {
                 width: 50%;
-                transform: translateX(-20%) translateY(0%);
+                transform: translateX(-35%) translateY(0%);
             }
             #cards {
                 width: 300px;
@@ -789,7 +792,7 @@ st.markdown("""
             margin-left: 20%;
             }
             
-	.scroll-down1 {
+	    .scroll-down1 {
                 height: 40px;
                 width: 25px;
                 border: 2px solid #1c3b29;
