@@ -821,7 +821,7 @@ st.markdown("""
             	position: absolute;
                 border-radius: 20px;
                 cursor: pointer;
-                transform: translateY(-600%) translateX(15%);
+                transform: translateY(-560%) translateX(15%);
                 
                 }
 			 
@@ -841,7 +841,7 @@ st.markdown("""
             }
             #cards {
                 width: 60vw;
-		
+		margin-bottom: 2vw;
             }
             .card-content {
                 font-size: 1em;
