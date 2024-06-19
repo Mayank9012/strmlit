@@ -647,7 +647,7 @@ st.markdown("""
             
             .containercards {
                 width: 50%;
-                transform: translateX(-35%) translateY(0%);
+                transform: translateX(-35%) translateY(-10%);
             }
             #cards {
                 width: 300px;
