@@ -623,7 +623,7 @@ st.markdown("""
 
             [data-testid="baseButton-secondary"]{
                 display:inline-block;
-                transform: translateX(28%) translateY(-703%);
+                transform: translateX(28%) translateY(-723%);
 				width: 135px;
 				height:35px;
 				border: 2px solid #3d6154;
