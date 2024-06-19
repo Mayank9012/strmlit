@@ -659,7 +659,7 @@ st.markdown("""
             }
             .card{
                     position: sticky;
-            top: 150px;
+            top: 300px;
             padding-top: calc(var(--index) * var(--cardTopPadding));
             }
 
