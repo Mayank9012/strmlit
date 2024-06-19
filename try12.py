@@ -780,7 +780,7 @@ st.markdown("""
                 color:#1c3b29;          
                 top: 0rem;
                 left:41%;
-                transform: translateY(-60px);
+                transform: translateY(-55px);
 		    }
           
        .logo {
@@ -794,7 +794,7 @@ st.markdown("""
             max-height: 300px;
             width:30vw;
             margin-top:30px;
-            transform:translateX(-83%)  translateY(30%) ;
+            transform:translateX(-79%)  translateY(30%) ;
             font-family: Sans;
             font-size: 0.9em; 
             font-weight: bold;  
