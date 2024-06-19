@@ -827,7 +827,7 @@ st.markdown("""
 			 
            
             [data-testid="stIFrame"]{
-                position: sticky;
+                position: relative;
                 width: 40%;
                 transform: translateX(-70%) translateY(-70%);
              
