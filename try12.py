@@ -786,7 +786,7 @@ st.markdown("""
        .logo {
             position: relative;
             width: 25vw;
-            transform: translateX(175%) translateY(50%);
+            transform: translateX(160%) translateY(50%);
             left: 25%;
             }
         .nose {
