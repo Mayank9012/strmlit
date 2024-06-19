@@ -647,7 +647,7 @@ st.markdown("""
             
             .containercards {
                 width: 50%;
-                transform: translateX(-35%) translateY(-10%);
+                transform: translateX(-40%) translateY(-10%);
             }
             #cards {
                 width: 300px;
@@ -724,7 +724,7 @@ st.markdown("""
             }
 
             [data-testid="baseButton-secondary"]{
-            transform: translateX(-88%) translateY(-850%);
+            transform: translateX(-105%) translateY(-850%);
 				width: 170px;
 				height:45px;
 				border: 2px solid #3d6154;
@@ -748,21 +748,22 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 40%;
-                transform: translateX(-75%) translateY(-80%);
+                transform: translateX(-89%) translateY(-88%);
                 margin-left:18%;
             }
             
             
             .containercards {
+                text-align: center;
                 width: 100%;
-                transform: translateX(10%);
+                transform: translateX(5%);
             }
             #cards {
-                width: 500px;
+                width: 45vw;
             }
             .card-content {
                 font-size: 1em;
-                width: 450px;
+                width: 30vw;
                 height: 200px;
             }
 
