@@ -597,14 +597,14 @@ st.markdown("""
                 overflow: hidden;
                 color:#1c3b29;          
                 top: 0rem;
-                left: 20%;
+                left: 16%;
                 transform: translateY(-90px);
 		    }
           
             .logo {
                 position: relative;
             width: 200px;
-            transform: translateX(35%) translateY(-25%);
+            transform: translateX(31%) translateY(-25%);
             }
             .nose {
             position: relative;
@@ -635,7 +635,7 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 100%;
-                transform: translateX(3%) translateY(-38%);
+                transform: translateX(1%) translateY(-38%);
             }
             .scroll-down {
 				position: absolute;
