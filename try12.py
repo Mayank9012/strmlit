@@ -779,14 +779,14 @@ st.markdown("""
                 overflow: hidden;
                 color:#1c3b29;          
                 top: 0rem;
-                left:41%;
-                transform: translateY(-55px);
+                left:35%;
+                transform: translateY(-52px);
 		    }
           
        .logo {
             position: relative;
             width: 25vw;
-            transform: translateX(180%) translateY(50%);
+            transform: translateX(175%) translateY(50%);
             left: 25%;
             }
         .nose {
@@ -804,7 +804,7 @@ st.markdown("""
             }
           
             [data-testid="baseButton-secondary"]{
-            transform: translateX(-60%) translateY(-850%);
+            transform: translateX(-67%) translateY(-850%);
 				width: 150px;
 				height:38px;
 				border: 2px solid #3d6154;
@@ -829,7 +829,7 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 40%;
-                transform: translateX(-70%) translateY(-70%);
+                transform: translateX(-76%) translateY(-70%);
              
             left: 30%;
             }
