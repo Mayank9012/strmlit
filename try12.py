@@ -134,7 +134,7 @@ with st.container():
 with st.container():	
     st.markdown("""
             <div id="section1" class="section"></div>
-                    <p id="welcomeText" style="color:#1c3b29;">  Welcome to  </p>
+                    <p id="welcomeText" style="color:#1c3b29;">  Welcome to NoSE </p>
                 <img class = "logo" src="https://svgshare.com/i/17BS.svg" >
                 <p class = "nose">Lorem ipsum dolo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
@@ -277,7 +277,7 @@ with st.container():
             webbrowser.open_new_tab(url)
                     
     with col2:	
-        butn= st.button("Check status")
+        butn= st.button("Check Status")
         if butn:
             pop()
 
@@ -331,6 +331,7 @@ st.markdown("""
         </div>
 
 """, unsafe_allow_html=True)
+
 
 st.markdown("<hr style='background-color: #3d6154; margin: 0; height: 4px; width: 100%; margin-top: 100px;'>", unsafe_allow_html=True)
 
@@ -396,25 +397,36 @@ st.markdown("""
             position: sticky;
             top: 250px;
             padding-top: calc(var(--index) * var(--cardTopPadding));
-
+            
         }
-
+        @keyframes fadeInOut {
+                0% { opacity: 0.1; }
+                 100% { opacity: 1; }
+            }
         #card1 .card-body {
             background-color: #1c3b29;
             color: white;
+            scroll-margin-top: 250px; /* Adjust based on card position */
+
         }
         #card2 .card-body {
             /* background-color: #7EC4CF; */
             background-color: #1c3b29;
             color: white;
+            scroll-margin-top: 250px; /* Adjust based on card position */
+
         }
         #card3 .card-body {
            background-color: #1c3b29;
               color: white;
+            scroll-margin-top: 250px; /* Adjust based on card position */
+
         }
         #card4 .card-body {
            background-color: #1c3b29;
                 color: white;
+            scroll-margin-top: 250px; /* Adjust based on card position */
+
         }
 
         .card-body {
@@ -427,9 +439,18 @@ st.markdown("""
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            transition: all 0.5s;     
-            
+            transition: all 0.5s;    
+             opacity: 1; /* Initially set opacity */
+      animation: fadeIn 3s forwards; /* Animation to fade in */
+      animation-play-state: paused; /* Pause animation initially */
         }
+            .card-body:hover {
+            transform: scale(1.1);
+        }
+          .card.in-view {
+      animation-play-state: running; /* Start animation when in view */
+    }
+            
 
         h2 {
             position: relative;
@@ -526,7 +547,7 @@ st.markdown("""
                 overflow: hidden;
                 color:#1c3b29;          
                 top: 0rem;
-                left:41%;
+                left:35%;
                 transform: translateY(-60px);
 		    }
         .logo {
@@ -576,7 +597,7 @@ st.markdown("""
                 overflow: hidden;
                 color:#1c3b29;          
                 top: 0rem;
-                left: 30%;
+                left: 20%;
                 transform: translateY(-90px);
 		    }
           
@@ -691,15 +712,15 @@ st.markdown("""
         .nose {
             position: relative;
             max-height: 300px;
-            width:450px;
+            width: 50%;
             margin-top:30px;
-            transform:translateX(-80%)  translateY(-30%) ;
+            transform:translateX(-50%)  translateY(-30%) ;
             font-family: Sans;
             font-size: 1em; 
             font-weight: bold;  
             color:#1c3b29;
             text-align:center;
-            left:28%;
+            margin-left:2%;
             }
 
             [data-testid="baseButton-secondary"]{
@@ -734,14 +755,14 @@ st.markdown("""
             
             .containercards {
                 width: 100%;
-                transform: translateX(-2%);
+                transform: translateX(10%);
             }
             #cards {
-                width: 60vw;
+                width: 500px;
             }
             .card-content {
                 font-size: 1em;
-                width: 50vw;
+                width: 450px;
                 height: 200px;
             }
 
@@ -913,6 +934,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
 });
 </script>
+  <script>
+    // Script to handle adding 'in-view' class based on scroll position
+    document.addEventListener('scroll', function() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top <= 250) {
+          card.classList.add('in-view');
+        } else {
+          card.classList.remove('in-view');
+        }
+      });
+    });
+  </script>
+
 """
 
 st.markdown(scroll_script, unsafe_allow_html=True)
