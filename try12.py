@@ -837,10 +837,11 @@ st.markdown("""
             
             .containercards {
                 width: 100%;
-                transform: translateX(-2%);
+                transform: translateX(3%);
             }
             #cards {
                 width: 60vw;
+		height:30vh;
             }
             .card-content {
                 font-size: 1em;
