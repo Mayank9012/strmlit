@@ -604,13 +604,13 @@ st.markdown("""
             .logo {
                 position: relative;
             width: 200px;
-            transform: translateX(31%) translateY(-25%);
+            transform: translateX(29%) translateY(-25%);
             }
             .nose {
             position: relative;
             max-height: 200px;
             width:75vw;
-            transform:translateX(-1%)  translateY(160%) ;
+            transform:translateX(0%)  translateY(160%) ;
             font-family: Sans;
             font-size: 1em; 
             font-weight: bold;  
@@ -635,7 +635,7 @@ st.markdown("""
             [data-testid="stIFrame"]{
                 position: relative;
                 width: 100%;
-                transform: translateX(1%) translateY(-38%);
+                transform: translateX(0%) translateY(-38%);
             }
             .scroll-down {
 				position: absolute;
